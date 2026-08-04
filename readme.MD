@@ -1,25 +1,17 @@
-Playstyle, life statistics app. 
+Playstyle – A Real-Life RPG & Statistics App
 
-Playstyle is an app that focuses on taking fifa card like statistics such as:
+Playstyle is a gamified self-improvement app that transforms personal growth into a football (FIFA Ultimate Team)-inspired experience.
 
-1. Pace
-2. Acceleration
-3. Physical 
-4. Meta (intelligence)
-5. Vision
+Instead of measuring football ability, Playstyle measures real-life attributes. Every user receives a personalized Playstyle Card upon creating an account, visually inspired by FIFA Ultimate Team player cards. This card represents the user's current "real-life stats" and evolves over time as they complete challenges and improve themselves.
 
-And applying them to real life through challenges, quests and mini games.
-Upon account creation, the user will be given a "Playstyle Card"
-similar to what you might see on fifa ultimate team.
+Core Statistics
 
+Each user has five primary attributes:
 
-These statistics can be upgraded through real life challenges within the app, tbd. 
+⚡ Pace – Speed of completing tasks, reacting to situations, and maintaining momentum.
+🏃 Acceleration – Ability to get started quickly, build habits, and overcome procrastination.
+💪 Physical – Fitness, health, endurance, strength, sleep, and overall physical wellbeing.
+🧠 Meta (Intelligence) – Learning ability, problem-solving, strategy, and knowledge acquisition.
+👁 Vision – Planning, creativity, long-term thinking, decision making, and awareness.
 
-In the v1 version, depending on scope and feasability, we can choose to program three options
-
-1. use the card in a simplified player career mode, 
-
-2. The card can be played against other account cards on the local system,
-
-3. Or the hardest one yet: --which we will likely need help from ai for-- a multiplayer where a user can go against other player cards.  
-
+Each statistic has a numerical rating (for example, 1–99), similar to FIFA player ratings.
