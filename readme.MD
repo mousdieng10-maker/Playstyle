@@ -12,7 +12,6 @@ And applying them to real life through challenges, quests and mini games.
 Upon account creation, the user will be given a "Playstyle Card"
 similar to what you might see on fifa ultimate team.
 
-<img src="assets/playercardexam.png">
 
 These statistics can be upgraded through real life challenges within the app, tbd. 
 
