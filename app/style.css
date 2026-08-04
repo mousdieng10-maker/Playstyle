@@ -1,0 +1,240 @@
+/* style.css — unchanged from what you had */
+
+*{
+  padding:0;
+  box-sizing:border-box;
+  margin:0;
+}
+body{
+  background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,.5)),url("assets/purple.avif");
+  min-height:100vh;
+  display:flex;
+  background-size:cover;
+  align-items:center;
+  justify-content:center;
+  font-family:Instrument Sans;
+}
+h3{
+  margin-bottom:2em;
+  margin-left:.5em;
+}
+label{
+  margin-left:4em;
+}
+.loginSect{
+  display:flex; 
+  flex-direction:column;
+  gap:.4em;
+}
+.btnContainer{
+  display:flex;
+  justify-content:center;
+}
+
+.card{
+  border-radius:3em;
+  width:fit-content;
+  height:fit-content; 
+  display:flex;
+  flex-direction:column; 
+  gap:1em;
+  justify-content:center;
+  padding:3em;
+}
+.layer{
+    display:flex;
+    align-items:center;
+    gap:5em;
+    margin-top:5em;
+}
+.big{
+    font-size:2em;
+    color:rgb(157, 0, 255);
+}
+input{
+  width:25em;
+  height:3em;
+  border-radius:2em; 
+  padding:.4em;
+  font-size:1.1em;
+  border:none; 
+  background:linear-gradient(90deg, rgba(128, 0, 128, 0.1), rgba(118, 1, 136, 0.1));
+  box-shadow:1px 1px 10px rgba(0, 0, 0, 0.177);
+  border:2px solid rgba(128, 0, 128, 0.258);
+  color:black;
+  margin:auto;
+}
+input::placeholder{
+    color:black;
+    font-size:1.1em;
+}
+#pressOn{
+  color:purple;
+  font-size:bolder; 
+  text-decoration:underline;
+}
+.flex{
+  display:flex;
+  justify-content: space-between;
+  border-radius:10em;
+  background:white;
+  box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
+}
+#homeScreen{
+    border-radius:10em;
+    background:white;
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
+    padding:5em;
+    width:fit-content;
+    height:fit-content;
+}
+.data{
+    display:flex;
+    flex-direction:column;
+}
+.title{
+    width:20em; 
+
+}
+.speBorderBe{
+    border-top-left-radius: 3em;
+    border-bottom-left-radius:3em;
+}
+.speBorderEnd{
+    border-bottom-right-radius:3em; 
+    border-top-right-radius:3em;
+}
+.fill{
+    background:rgb(157, 0, 255);
+    height:3em;
+    width:8em;
+}
+
+.imgBtn{
+    transition:.2s; 
+}
+.imgBtn:hover{
+    transform:translateY(-.2em);
+    filter:saturate(200%); 
+}
+.player{
+    display:flex;
+    align-items:center;
+}
+#welcomeMsg{
+    font-size:5em;
+}
+.box{
+    border:5px solid purple;
+    padding:1em;
+    width:40em;
+    border-radius:3em;
+    border-top:10px solid rgb(184, 62, 255);
+    border-left:10px solid rgb(184, 62, 255);
+    border-right:10px solid rgb(90, 0, 142);
+    border-bottom:10px solid rgb(90,0,142);
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.337);
+}
+
+.container{
+    width:50%;
+    height:50%
+}
+.musicPlayer{
+    border-radius:3em;
+    padding:4em;
+    width:fit-content;
+    display:flex;
+    flex-direction:column;
+    background:white;
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
+    justify-content:center;
+    gap:1em;
+    align-items:center;
+    margin-right:1em;
+}
+#musicWidget{
+    width:20em;
+    height:20em;
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.308);
+    border-radius:1em;
+}
+#signupScreen{
+    padding:5em;
+}
+.init{
+    background:rgba(164, 164, 164, 0.4);
+    animation: loading 1s infinite; 
+
+}
+.titlePlaceholder{
+    width:30em;
+    height:8em;
+}
+.slogan{
+    width:15em;
+    height:3em;
+}
+.loadbtnContainer{
+    width:10em;
+    height:3em;
+    display:flex;
+    justify-content:center;
+}
+.loadloginSect{
+    width:25em;
+    height:3em;
+}
+@keyframes loading{
+    0%{background:rgba(164, 164, 164, 0.4);}
+    50%{background:rgba(164,164,164,.9);}
+    100%{filter:rgba(164,164,164,.4);}
+}
+.bar{
+    display:flex;
+    width:40em;
+    height:3em;
+    border:2px solid purple; 
+    border-radius:3em;
+
+}
+.container h2{
+    font-size:3em;
+}
+.grid{
+    display:flex;
+    width:100%;
+    height:50%
+}
+.title{
+  border-radius:10em;
+  width:50em;
+  height:100%;
+}
+#signupScreen{
+    display:flex;
+    justify-content:center;
+}
+button{
+  width:12em;
+  border-radius:3em;
+  border:none; 
+  text-align:center;
+  padding:1em;
+  background:linear-gradient(75deg, rgba(162, 0, 255,.776), rgba(78, 0, 78, 0.776));
+  border-top:2px solid rgb(184, 62, 255);
+  border-left:2px solid rgb(184, 62, 255);
+  border-right:2px solid rgb(90, 0, 142);
+  border-bottom:2px solid rgb(90,0,142);
+  font-weight:bolder;
+  font-size:1em;
+  color:white; 
+  transition:.2s;
+}
+button:hover{
+    transform:translateY(-.2em);
+    filter:saturate(200%);
+}
+.card h1{
+  font-size:6em; 
+}

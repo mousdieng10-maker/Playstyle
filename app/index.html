@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playstyle</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- SIGNUP SCREEN -->
+  <div class="flex" id="signupScreen">
+
+    <div class="card">
+      <img  src="assets/webtitle.png">
+
+      <div class="loginTitle">
+        <h3>Make your life a football game.</h3>
+      </div>
+
+      <h4 id="signupErrorMsg"></h4>
+
+      <div class="loginSect">
+        <label>Create Username</label>
+        <input type="text" id="subUsernameInput" placeholder="type Username">
+      </div>
+
+      <div class="loginSect">
+        <label>Create Password</label>
+        <input type="password" id="subPasswordInput" placeholder="type Password">
+      </div>
+
+      <div class="loginSect">
+        <label>Confirm Password</label>
+        <input type="password" id="conSubPasswordInput" placeholder="type Password">
+      </div>
+
+      <div class="btnContainer">
+        <button id="signupBtn">Join Playstyle</button>
+      </div>
+
+      <br><br>
+
+      <h4>
+        Already a member?
+        <span id="pressOnLogin">Login</span>
+      </h4>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- LOGIN SCREEN -->
+  <div class="flex" id="loginScreen">
+
+    <div class="card">
+
+      <img src="assets/webtitle.png">
+
+      <div class="loginTitle">
+        <h3>Make your life a football game.</h3>
+      </div>
+
+      <h4 id="errorMsg"></h4>
+
+      <div class="loginSect">
+        <label>Username</label>
+        <input type="text" id="usernameInput" placeholder="type Username">
+      </div>
+
+      <div class="loginSect">
+        <label>Password</label>
+        <input type="password" id="passwordInput" placeholder="type Password">
+      </div>
+
+      <div class="btnContainer">
+        <button id="loginBtn">Join Playstyle</button>
+      </div>
+
+      <br><br>
+
+      <h4>
+        Not a member?
+        <span id="pressOn">Sign up</span>
+      </h4>
+
+    </div>
+
+    <img class="title" src="assets/adidas.png">
+
+  </div>
+
+
+
+  <!-- MUSIC PLAYER -->
+
+  <div class="musicPlayer" id="musicPlayer">
+
+    <h3>Currently playing</h3>
+
+    <img src="assets/daidai.png" id="musicWidget">
+
+    <div class="player">
+      <img id="playBackward" class="imgBtn" src="assets/skipBack.png">
+      <img class="imgBtn" src="assets/playing.png">
+      <img id="playForward" class="imgBtn" src="assets/playForward.png">
+    </div>
+
+  </div>
+
+
+
+  <!-- HOME SCREEN -->
+
+  <div id="homeScreen">
+
+    <h1 id="welcomeMsg">Welcome, Moustapha</h1>
+
+    <div class="layer">
+
+      <div class="box">
+
+        <div class="grid">
+
+          <div class="container">
+            <h2>
+              OVR:
+              <div class="big">84</div>
+            </h2>
+          </div>
+
+          <div class="container">
+            <h2>
+              Goals:
+              <div class="big">42</div>
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="grid">
+
+          <div class="container">
+            <h2>
+              Assists:
+              <div class="big">84</div>
+            </h2>
+          </div>
+
+          <div class="container">
+            <h2>
+              OVR:
+              <div class="big">84</div>
+            </h2>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="verticalLayer">
+
+        <div class="progress-widget">
+
+          <h1>Current Progress</h1>
+
+          <div class="data">
+
+            <div class="bar">
+              <div class="speBorderBe fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="speBorderEnd fill"></div>
+            </div>
+
+            <h3>73% done.</h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id="loadLoginScreen" class="flex">
+      <div class="card">
+        <div  class="init titlePlaceholder"></div>
+        <div class="init slogan"></div>
+        <div class="loginSect init"></div>
+        <div class="loginSect init"></div>
+        <div class="btnContainer">
+        <div class="init"></div>
+      </div>
+      <br><br>
+      <img class="title" src="assets/adidas.png">
+
+      
+      </div>
+  </div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
