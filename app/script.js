@@ -11,7 +11,7 @@ const errorMsg = document.getElementById("errorMsg");
 const loginBtn = document.getElementById("loginBtn");
 const welcomeMsg = document.getElementById("welcomeMsg");
 const musicPlayer = document.getElementById("musicPlayer"); 
-
+const body = document.getElementById("body"); 
 // sign up screen
 const signupScreen = document.getElementById("signupScreen");
 const subUsernameInput = document.getElementById("subUsernameInput"); 
@@ -35,6 +35,13 @@ const notFilledError = "Please fill up all corresponding fields!"
 function load(divLoader, div){
     hide(divLoader);
     showFlex(div); 
+}
+
+// make the home page a full size screen instead of a widget 
+async function initHomeScreen(){
+    body.style.display = "block"; 
+    body.style.background = "white"; 
+    await greetUser()
 }
 
 setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
@@ -64,6 +71,7 @@ loginBtn.addEventListener("click", async () =>{
         }
         else{
             hide(loginScreen);
+            await initHomeScreen()
             show(homeScreen);
         }
     }
@@ -90,6 +98,7 @@ signupBtn.addEventListener("click", async () => {
             }
             else{
                 hide(signupScreen);
+                await initHomeScreen()
                 show(homeScreen); 
             }
         }
@@ -98,3 +107,12 @@ signupBtn.addEventListener("click", async () => {
         }
     }
 })
+
+// ==============================
+// home js
+
+async function greetUser(){
+    let greeting = await window.pywebview.api.greetSelf();
+    welcomeMsg.textContent = greeting; 
+    console.log(greeting)
+}

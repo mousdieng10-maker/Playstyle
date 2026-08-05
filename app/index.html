@@ -10,9 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body id="body">
 
   <!-- SIGNUP SCREEN -->
   <div class="flex" id="signupScreen">
@@ -121,81 +122,35 @@
   <!-- HOME SCREEN -->
 
   <div id="homeScreen">
-
-    <h1 id="welcomeMsg">Welcome, Moustapha</h1>
-
-    <div class="layer">
-
-      <div class="box">
-
-        <div class="grid">
-
-          <div class="container">
-            <h2>
-              OVR:
-              <div class="big">84</div>
-            </h2>
-          </div>
-
-          <div class="container">
-            <h2>
-              Goals:
-              <div class="big">42</div>
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="grid">
-
-          <div class="container">
-            <h2>
-              Assists:
-              <div class="big">84</div>
-            </h2>
-          </div>
-
-          <div class="container">
-            <h2>
-              OVR:
-              <div class="big">84</div>
-            </h2>
-          </div>
-
-        </div>
-
+    <nav>
+      <div class="top-nav">
+        <img src="assets/webtitle.png" id="icon">
       </div>
-
-
-      <div class="verticalLayer">
-
-        <div class="progress-widget">
-
-          <h1>Current Progress</h1>
-
-          <div class="data">
-
-            <div class="bar">
-              <div class="speBorderBe fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="speBorderEnd fill"></div>
-            </div>
-
-            <h3>73% done.</h3>
-
-          </div>
-
+      <div class="lower-nav">
+          <div class="middle-nav">
+            <div id="homeBtn" class="nav-tab"><i class="fa-solid fa-futbol"></i>      Home</div>
+            <div id="cardBtn" class="nav-tab"><i class="fa-solid fa-address-card"></i>      Card</div>
+            <div id="missionBtn" class="nav-tab"><i class="fa-solid fa-list"></i>      Missions</div>
+            <div id="statBtn" class="nav-tab"><i class="fa-solid fa-chart-simple"></i>      Stats</div>
+            <div id="leaderBtn" class="nav-tab"><i class="fa-solid fa-arrow-up-1-9"></i>      Leaderboard</div>
+            <div id="profileBtn" class="nav-tab"><i class="fa-solid fa-user"></i>      Profile</div>
+            <div id="settingsBtn" class="nav-tab"><i class="fa-solid fa-gear"></i>      Settings</div>
         </div>
-
+        <div class="bottom-nav">
+          <h3>Moustapha</h3>
+        </div>
       </div>
-
+    </nav>
+    <div class="homeSection">
+      <div class="top">
+        <h1 id="welcomeMsg"></h1>
+      </div>
+      <div class="bottom"></div>
     </div>
 
+    
   </div>
+
   <div id="loadLoginScreen" class="flex">
       <div class="card">
         <div  class="init titlePlaceholder"></div>

@@ -5,7 +5,7 @@
   box-sizing:border-box;
   margin:0;
 }
-body{
+#body{
   background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,.5)),url("assets/purple.avif");
   min-height:100vh;
   display:flex;
@@ -78,19 +78,56 @@ input::placeholder{
   justify-content: space-between;
   border-radius:10em;
   background:white;
-  padding:1em;
   box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
+}
+nav{
+    display:flex;
+    flex-direction:column; 
+    gap:1em;
+    padding:1em; 
 }
 #loadLoginScreen{
     padding:2em;
 }
-#homeScreen{
-    border-radius:10em;
-    background:white;
-    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
-    padding:5em;
-    width:fit-content;
-    height:fit-content;
+#icon{
+    height:5em; 
+}
+nav{
+    padding:1em; 
+    width:fit-content; 
+    border-right:2px solid rgba(157, 0, 255, 0.276); 
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.314); 
+}
+
+.middle-nav{
+    display:flex;
+    flex-direction:column; 
+    gap:.3em;
+}
+.fa-solid{
+    margin-right:.7em;
+    transition:.2s; 
+    font-size:1.2em;  
+}
+.fa-solid:hover{
+    color:rgb(157, 0, 255);
+}
+.nav-tab{
+    font-size:1.2em; 
+    padding-right:1em; 
+    padding-top:.5em; 
+    padding-left:.2em; 
+    padding-bottom:.5em; 
+    border-radius:.4em; 
+    transition:.2s; 
+}
+.nav-tab:hover{
+    background:rgba(157, 0, 255, 0.351);
+}
+.lower-nav{
+    display:flex;
+    flex-direction:column; 
+    gap:30em;
 }
 .data{
     display:flex;
@@ -125,8 +162,10 @@ input::placeholder{
     display:flex;
     align-items:center;
 }
-#welcomeMsg{
-    font-size:5em;
+#homeScreen{
+    display:flex; 
+    flex-direction:row;
+    gap:5em;
 }
 .box{
     border:5px solid purple;

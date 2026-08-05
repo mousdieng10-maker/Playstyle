@@ -5,8 +5,13 @@ import rewrite as re
 from pathlib import Path
 
 abs_path = Path(__file__).resolve().parent
+#path to where the accounts are stored 
 config_file = abs_path/"config"/"accounts.json"
-print(config_file)
+#path to where the account currently signed in is stored
+current_config_file = abs_path/"config"/"currentAcc.json"
+
+def make_path(target):
+    return abs_path/"config"/target
 class Api():
     def login(self,username,password):
         exists = False
@@ -14,14 +19,15 @@ class Api():
         for account in data:
             if account.get("username") == username: 
                 exists = True
+                account_to_sign = account
         if exists == False:
             return "This account does not exist"
         else:
-            for account in data:
-                if bcrypt.checkpw(password.encode(), account.get("password").encode()):
-                    return True
-                else:
-                    return "Incorrect Password, Please try again!"
+            if bcrypt.checkpw(password.encode(), account_to_sign.get("password").encode()):
+                re.write(current_config_file, account_to_sign)
+                return True
+            else:
+                return "Incorrect Password, Please try again!"
 
 
     def signup(self, username, password):
@@ -36,11 +42,28 @@ class Api():
             hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt() )
             account_dict = {
                 "username":username, 
-                "password":hashed_password.decode() 
+                "password":hashed_password.decode(),
+                "age":20,
+                "pace":50,
+                "meta":50,
+                "acceleration":50,
+                "physical":50,
+                "vision":50
             }
+            re.write(current_config_file, account_dict)
             data.append(account_dict)
             re.write(config_file, data)
             return True
+    def greetSelf(self):
+            import random
+            data = checkfile.read(current_config_file)
+            random_phrases = checkfile.read(make_path("greetList.json"))
+            
+            username = data.get("username")
+            return random_phrases.get(str(random.randint(1,31))).format(username)
+            
+            
+
 
 
 api = Api()
