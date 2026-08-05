@@ -24,12 +24,10 @@ const signupErrorMsg = document.getElementById("signupErrorMsg");
 const loadLoginScreen = document.getElementById("loadLoginScreen"); 
 // hide all initial screens
 
-
-hide(musicPlayer);
 hide(homeScreen);
+hide(musicPlayer);
 hide(signupScreen);
 hide(loginScreen);
-
 const notFilledError = "Please fill up all corresponding fields!"
 
 function load(divLoader, div){
