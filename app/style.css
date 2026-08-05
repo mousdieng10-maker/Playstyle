@@ -80,11 +80,13 @@ input::placeholder{
   background:white;
   box-shadow:1px 1px 10px rgba(0, 0, 0, 0.316);
 }
-nav{
+.nav{
     display:flex;
     flex-direction:column; 
     gap:1em;
+    width:fit-content; 
     padding:1em; 
+    box-shadow:1px 1px 10px rgba(0,0,0,.3);
 }
 #loadLoginScreen{
     padding:2em;
@@ -165,18 +167,25 @@ nav{
 #homeScreen{
     display:flex; 
     flex-direction:row;
-    gap:5em;
 }
-.box{
-    border:5px solid purple;
-    padding:1em;
-    width:40em;
-    border-radius:3em;
-    border-top:10px solid rgb(184, 62, 255);
-    border-left:10px solid rgb(184, 62, 255);
-    border-right:10px solid rgb(90, 0, 142);
-    border-bottom:10px solid rgb(90,0,142);
-    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.337);
+.playstyle-icons{
+    display:flex;
+    gap:.3em; 
+    
+}
+.playstyle{
+    display:flex;
+    gap:1em; 
+    justify-content:center;
+    align-items:center;
+    flex-direction:column; 
+}
+.homeSection{
+    margin-left:4.5em; 
+}
+.main{
+    color:rgb(157, 0, 255);
+    font-size:2em; 
 }
 
 .container{

@@ -69,4 +69,4 @@ class Api():
 api = Api()
 webview.create_window("Playstyle", "app/index.html", js_api=api)
 
-webview.start()
+webview.start(debug=True)

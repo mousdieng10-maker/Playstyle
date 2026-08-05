@@ -72,7 +72,7 @@ loginBtn.addEventListener("click", async () =>{
         else{
             hide(loginScreen);
             await initHomeScreen()
-            show(homeScreen);
+            showFlex(homeScreen);
         }
     }
 })
@@ -99,7 +99,7 @@ signupBtn.addEventListener("click", async () => {
             else{
                 hide(signupScreen);
                 await initHomeScreen()
-                show(homeScreen); 
+                showFlex(homeScreen); 
             }
         }
         else{
