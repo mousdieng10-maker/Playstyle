@@ -1,3 +1,12 @@
 [
-    
+    {
+        "username": "Moustapha",
+        "password": "$2b$12$JI1HRrl46uHPeXN9qgcPDOp.pSVNAPEXMst1tL5mc5pOkG5c69/VC",
+        "age": 20,
+        "pace": 50,
+        "meta": 50,
+        "acceleration": 50,
+        "physical": 50,
+        "vision": 50
+    }
 ]

@@ -1,0 +1,23 @@
+/* Primary button */
+
+button {
+  width: 12em;
+  border-radius: 3em;
+  border: none;
+  text-align: center;
+  padding: 1em;
+  background: linear-gradient(75deg, rgba(162, 0, 255, .776), rgba(78, 0, 78, 0.776));
+  border-top: 2px solid rgb(184, 62, 255);
+  border-left: 2px solid rgb(184, 62, 255);
+  border-right: 2px solid rgb(90, 0, 142);
+  border-bottom: 2px solid rgb(90, 0, 142);
+  font-weight: bolder;
+  font-size: 1em;
+  color: white;
+  transition: .2s;
+}
+
+button:hover {
+  transform: translateY(-.2em);
+  filter: saturate(200%);
+}

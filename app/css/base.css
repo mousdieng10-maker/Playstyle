@@ -1,0 +1,26 @@
+/* Global reset + base page/element styles */
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url("../assets/purple.avif");
+  min-height: 100vh;
+  display: flex;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  font-family: Instrument Sans;
+}
+
+h3 {
+  margin-bottom: 2em;
+  margin-left: .5em;
+}
+
+label {
+  margin-left: 4em;
+}

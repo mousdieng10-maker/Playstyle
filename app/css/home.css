@@ -1,0 +1,48 @@
+/* Home screen layout + playstyle stat icons */
+
+#homeScreen {
+  display: flex;
+  flex-direction: row;
+}
+
+.homeSection {
+  margin-left: 4.5em;
+}
+
+.playstyle-icons {
+  display: flex;
+  gap: 2.5em;
+  
+}
+.playstyleContainer{
+  border-radius: 2em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+  padding: 2em;
+}
+
+.playstyle {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  border-right: 2px solid rgba(0, 0, 0, .1);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.styleTitle {
+  font-size: .8em;
+}
+
+.ovr {
+  font-size: 2em;
+  margin: 0;
+}
+
+.main {
+  color: rgb(157, 0, 255);
+  font-size: 2em;
+}

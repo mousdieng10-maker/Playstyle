@@ -1,0 +1,67 @@
+/* Generic layout building blocks used across screens */
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10em;
+  background: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.316);
+}
+
+.card {
+  border-radius: 3em;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  padding: 3em;
+}
+
+.card h1 {
+  font-size: 6em;
+}
+
+.layer {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+  margin-top: 5em;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 50em;
+  height: 100%;
+  border-radius: 10em;
+}
+
+.speBorderBe {
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
+}
+
+.speBorderEnd {
+  border-bottom-right-radius: 3em;
+  border-top-right-radius: 3em;
+}
+
+.grid {
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+
+.container {
+  width: 50%;
+  height: 50%;
+}
+
+.container h2 {
+  font-size: 3em;
+}

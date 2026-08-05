@@ -1,0 +1,41 @@
+/* Inputs and login/signup form helpers */
+
+.loginSect {
+  display: flex;
+  flex-direction: column;
+  gap: .4em;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 25em;
+  height: 3em;
+  border-radius: 2em;
+  padding: .4em;
+  font-size: 1.1em;
+  border: 2px solid rgba(128, 0, 128, 0.258);
+  background: linear-gradient(90deg, rgba(128, 0, 128, 0.1), rgba(118, 1, 136, 0.1));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.177);
+  color: black;
+  margin: auto;
+}
+
+input::placeholder {
+  color: black;
+  font-size: 1.1em;
+}
+
+#pressOn {
+  color: purple;
+  font-size: bolder;
+  text-decoration: underline;
+}
+
+.big {
+  font-size: 2em;
+  color: rgb(157, 0, 255);
+}

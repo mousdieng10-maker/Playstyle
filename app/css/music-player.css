@@ -1,0 +1,42 @@
+/* "Currently playing" widget */
+
+.musicPlayer {
+  border-radius: 3em;
+  padding: 4em;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.316);
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  margin-right: 1em;
+}
+
+#musicWidget {
+  width: 20em;
+  height: 20em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
+  border-radius: 1em;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+}
+
+.imgBtn {
+  transition: .2s;
+}
+
+.imgBtn:hover {
+  transform: translateY(-.2em);
+  filter: saturate(200%);
+}
+
+.fill {
+  background: rgb(157, 0, 255);
+  height: 3em;
+  width: 8em;
+}

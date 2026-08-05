@@ -1,0 +1,11 @@
+/* Login / signup screen containers */
+
+#signupScreen {
+  padding: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+#loadLoginScreen {
+  padding: 2em;
+}

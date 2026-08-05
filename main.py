@@ -17,7 +17,7 @@ class Api():
         exists = False
         data = checkfile.read(config_file)
         for account in data:
-            if account.get("username") == username: 
+            if account.get("username").lower() == username.lower(): 
                 exists = True
                 account_to_sign = account
         if exists == False:
