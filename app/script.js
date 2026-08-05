@@ -32,6 +32,13 @@ hide(loginScreen);
 
 const notFilledError = "Please fill up all corresponding fields!"
 
+function load(divLoader, div){
+    hide(divLoader);
+    showFlex(div); 
+}
+
+setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
+
 // compare two strings
 function compare(string1, string2){
     if(string1.value.trim() == string2.value.trim()){
