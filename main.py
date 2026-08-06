@@ -48,7 +48,8 @@ class Api():
                 "meta":50,
                 "acceleration":50,
                 "physical":50,
-                "vision":50
+                "vision":50,
+                "playstyle":"",
             }
             re.write(current_config_file, account_dict)
             data.append(account_dict)
@@ -61,17 +62,32 @@ class Api():
             
             username = data.get("username")
             return random_phrases.get(str(random.randint(1,31))).format(username)
-    def getStats(self):
+    def get_user_obj(self):
         from manageAcc import Account
-
         user = checkfile.read(current_config_file)  
-        user_object = Account(user.get("username"), user.get("meta"),user.get("pace"), user.get("acceleration"), user.get("physical"), user.get("vision"))    
+        user_object = Account(user.get("username"), user.get("meta"),user.get("pace"), user.get("acceleration"), user.get("physical"), user.get("vision"), user.get("playstyle"))    
+        return user_object
+
+    def getStats(self):
+
+        user_object = self.get_user_obj()
         return user_object.giveStatsDict() 
-            
-
-
+    def setPlaystyle(self, playstyle):
+        data = checkfile.read(current_config_file)
+        data["playstyle"] = playstyle
+        account_data = checkfile.read(config_file)
+        for account in account_data:
+            if account.get("username") == data.get("username"):
+                account["playstyle"] = playstyle
+                re.write(config_file, account_data)
+        re.write(current_config_file,data)
+        return True 
+    def showQuests(self):
+        user = self.get_user_obj()
+        return user.assignPlaystyle()
+        
 
 api = Api()
 webview.create_window("Playstyle", "app/index.html", js_api=api)
 
-webview.start(debug=True)
+webview.start()

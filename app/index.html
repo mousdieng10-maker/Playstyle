@@ -118,35 +118,40 @@
   </div>
 
   <!-- Archetype screen-->
-   <div class="flex" style="display:none" id="archetypeScreen">
-    <div>
+   <!-- Archetype screen-->
+   <div class="flex" id="archetypeScreen">
+    <div class="top">
       <h1>Choose your playstyle</h1>
       <h3>Your club training will depend on the archetype you choose.</h3>
     </div>
     <div class="box">
-      <div class="grid">
-        <div class="insideGrid">
-          <h2>Tekkers</h2>
-          <h3>Specializes in tech, anything computer, they can and will do.</h3>
+      <div class="archetype-grid">
+        <div class="insideGrid" data-archetype="tekkers">
+          <div class="archetype-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h2 style="font-size:2em;">Tekkers</h2>
+          <h3 style="font-size:1.4em;">Specializes in tech, anything computer, they can and will do.</h3>
+          <button class="archetype-btn" id="tekkers">Choose Tekkers</button>
         </div>
-        <div class="insideGrid">
-          <h2>All Rounder</h2>
-          <h3>Decent in all archetypes, tech literacy, reading, physicality,</h3>
+        <div class="insideGrid" data-archetype="all-rounder">
+          <div class="archetype-icon" ><i class="fa-solid fa-circle-nodes"></i></div>
+          <h2 style="font-size:2em;">All Rounder</h2>
+          <h3 style="font-size:1.4em;">Decent in all archetypes, tech literacy, reading, physicality.</h3>
+          <button class="archetype-btn" id="allRounder">Choose All Rounder</button>
         </div>
-      </div>
-      <div class="grid">
-        <div class="insideGrid">
-          <h2>Playmaker</h2>
-          <h3>The vision and read is at play here, reading thou shall.</h3>
+        <div class="insideGrid" data-archetype="playmaker">
+          <div class="archetype-icon"><i class="fa-solid fa-eye"></i></div>
+          <h2 style="font-size:2em;">Playmaker</h2>
+          <h3 style="font-size:1.4em;">The vision and read is at play here, reading thou shall.</h3>
+          <button class="archetype-btn" id="playmaker">Choose Playmaker</button>
         </div>
-        <div class="insideGrid">
-          <h2>Defender</h2>
-          <h3>Incredibly physical, running, weightlifting, anything that requires muscle.</h3>
+        <div class="insideGrid" data-archetype="defender">
+          <div class="archetype-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <h2 style="font-size:2em;">Defender</h2>
+          <h3 style="font-size:1.4em;">Incredibly physical, running, weightlifting, anything that requires muscle.</h3>
+          <button class="archetype-btn" id="defender">Choose Defender</button>
         </div>
       </div>
     </div>
-    
-    
    </div>
 
   <!-- HOME SCREEN -->
@@ -193,9 +198,9 @@
         <div class="main-col">
 
           <div class="greeting">
-            <h4 id="welcomeMsg"></h4>
-            <h1>Ready to level up today?</h1>
-            <p class="subtext">Every action counts.</p>
+            <h4>welcome,</h4>
+            <h1 id="welcomeMsg"></h1>
+            <p class="subtext">Do it today.</p>
           </div>
 
           <div class="playstyleContainer">
@@ -240,42 +245,13 @@
             </div>
           </div>
 
-          <div class="quests-card">
+          <div class="quests-card" id="quests">
             <div class="quests-header">
               <h3 class="section-label">TODAY'S QUESTS</h3>
               <span class="view-all" id="viewAllQuests">View all</span>
             </div>
 
-            <div class="quest-row" data-quest="morning-run">
-              <div class="quest-icon"><i class="fa-solid fa-person-running"></i></div>
-              <div class="quest-info">
-                <h4>Morning Run</h4>
-                <p>Run 2km to boost your Physical stat</p>
-              </div>
-              <span class="quest-progress">0 / 1</span>
-              <button class="quest-btn">Go</button>
-            </div>
-
-            <div class="quest-row" data-quest="read-pages">
-              <div class="quest-icon"><i class="fa-solid fa-book"></i></div>
-              <div class="quest-info">
-                <h4>Read 10 Pages</h4>
-                <p>Improve your Meta</p>
-              </div>
-              <span class="quest-progress">0 / 10</span>
-              <button class="quest-btn">Go</button>
-            </div>
-
-            <div class="quest-row" data-quest="plan-day">
-              <div class="quest-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-              <div class="quest-info">
-                <h4>Plan Your Day</h4>
-                <p>Complete your daily planning</p>
-              </div>
-              <span class="quest-progress">0 / 1</span>
-              <button class="quest-btn">Go</button>
-            </div>
-
+            
           </div>
 
           <div class="promo-banner">

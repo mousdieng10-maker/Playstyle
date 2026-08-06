@@ -1,51 +1,114 @@
 // script.js
+
+
 import {show, showFlex, hide } from "./manageCard.js";
 
-const loginScreen = document.getElementById("loginScreen");
-const homeScreen = document.getElementById("homeScreen");
-const pressOn = document.getElementById("pressOn");
+function select(selector) {
+    return document.getElementById(selector);
+}
 
-const usernameInput = document.getElementById("usernameInput");
-const passwordInput = document.getElementById("passwordInput");
-const errorMsg = document.getElementById("errorMsg");
-const loginBtn = document.getElementById("loginBtn");
-const welcomeMsg = document.getElementById("welcomeMsg");
-const musicPlayer = document.getElementById("musicPlayer"); 
-const body = document.getElementById("body"); 
+const loginScreen = select("loginScreen");
+const homeScreen = select("homeScreen");
+const pressOn = select("pressOn");
+
+const usernameInput = select("usernameInput");
+const passwordInput = select("passwordInput");
+const errorMsg = select("errorMsg");
+const loginBtn = select("loginBtn");
+const welcomeMsg = select("welcomeMsg");
+const musicPlayer = select("musicPlayer");
+const body = select("body");
+
 // sign up screen
-const signupScreen = document.getElementById("signupScreen");
-const subUsernameInput = document.getElementById("subUsernameInput"); 
-const subPasswordInput = document.getElementById("subPasswordInput");
-const conSubPasswordInput = document.getElementById("conSubPasswordInput");
-const signupBtn = document.getElementById("signupBtn"); 
-const signupErrorMsg = document.getElementById("signupErrorMsg");
+const signupScreen = select("signupScreen");
+const subUsernameInput = select("subUsernameInput");
+const subPasswordInput = select("subPasswordInput");
+const conSubPasswordInput = select("conSubPasswordInput");
+const signupBtn = select("signupBtn");
+const signupErrorMsg = select("signupErrorMsg");
 
 // placeholder login screen
-const loadLoginScreen = document.getElementById("loadLoginScreen"); 
+const loadLoginScreen = select("loadLoginScreen");
 
-// home screen 
-const paceHolder = document.getElementById("paceHolder");
-const paceBar = document.getElementById("paceBar");
+// home screen
+const paceHolder = select("paceHolder");
+const paceBar = select("paceBar");
 
-const accHolder = document.getElementById("accHolder");
-const accBar = document.getElementById("accBar");
+const accHolder = select("accHolder");
+const accBar = select("accBar");
 
-const physicalHolder = document.getElementById("physicalHolder");
-const physicalBar = document.getElementById("physicalBar");
+const physicalHolder = select("physicalHolder");
+const physicalBar = select("physicalBar");
 
-const metaHolder = document.getElementById("metaHolder");
-const metaBar = document.getElementById("metaBar");
+const metaHolder = select("metaHolder");
+const metaBar = select("metaBar");
 
-const visionHolder = document.getElementById("visionHolder");
-const visionBar = document.getElementById("visionBar");
+const visionHolder = select("visionHolder");
+const visionBar = select("visionBar");
 
-const cardOvr = document.getElementById("cardOvr");
+const cardOvr = select("cardOvr");
+
+const cardRole = select("cardRole");
+const quests = select("quests");
+const navUsername = select("navUsername");
+function createTask(title,desc){
+    const task = document.createElement("div");
+    task.className = "quest-row";
+    const taskInfo = document.createElement("div");
+    taskInfo.className = 'quest-info';
+    const taskTitle = document.createElement("h4");
+    taskTitle.textContent = title;
+    const taskDesc = document.createElement("p");
+    taskDesc.textContent = desc;
+    const goBtn = document.createElement("button");
+    goBtn.textContent = "Sign";
+
+    task.appendChild(taskInfo);
+    taskInfo.appendChild(taskTitle);
+    taskInfo.appendChild(taskDesc);
+    task.appendChild(goBtn);
+    quests.appendChild(task);
+
+}
+// archetype screen
+const archetypeScreen = select("archetypeScreen"); 
+const defender = select("defender");
+const tekkers = select("tekkers");
+const allRounder = select("allRounder"); 
+const playmaker = select("playmaker");
+
+async function prepArchetype(name){
+    hide(archetypeScreen);
+    await window.pywebview.api.setPlaystyle(name)
+    await initHomeScreen();
+    showFlex(homeScreen);
+    
+
+}
+defender.onclick = async function(){
+    prepArchetype("defender");
+
+}
+tekkers.onclick = async function(){
+    prepArchetype("tekkers");
+
+}
+allRounder.onclick = async function(){
+    prepArchetype("all_rounder");
+    
+
+}
+playmaker.onclick = async function(){
+    prepArchetype("playmaker");
+
+}
+
 
 // hide all initial screens
 
 hide(musicPlayer);
 hide(signupScreen);
-hide(loginScreen);
+hide(archetypeScreen); 
 hide(homeScreen);
 
 const notFilledError = "Please fill up all corresponding fields!"
@@ -77,6 +140,13 @@ async function initHomeScreen(){
     visionBar.style.width = `${player_stats.vision}%`
 
     cardOvr.textContent = player_stats.overall;
+    cardRole.textContent = player_stats.playstyle;
+    navUsername.textContent = player_stats.username;
+
+    let playstyleDetails = await window.pywebview.api.showQuests()
+    for(const playstyle of playstyleDetails.lower_quests){
+        createTask(playstyle.quest_name,playstyle.description)
+    }
 }
 
 setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
@@ -133,8 +203,7 @@ signupBtn.addEventListener("click", async () => {
             }
             else{
                 hide(signupScreen);
-                await initHomeScreen()
-                showFlex(homeScreen); 
+                showFlex(archetypeScreen); 
             }
         }
         else{
