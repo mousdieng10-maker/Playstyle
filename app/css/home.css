@@ -1,48 +1,513 @@
-/* Home screen layout + playstyle stat icons */
+/* Home screen layout, dashboard widgets + playstyle stat icons */
 
 #homeScreen {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .homeSection {
-  margin-left: 4.5em;
+  margin-left: 0;
+  padding: 2em 3em;
+  width: 100%;
+}
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.topbar-icon {
+  position: relative;
+  font-size: 1.3em;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.topbar-icon .dot {
+  position: absolute;
+  top: -0.2em;
+  right: -0.2em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: rgb(157, 0, 255);
+}
+
+.avatar-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.avatar-circle {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  background: rgba(157, 0, 255, 0.1);
+  color: rgb(157, 0, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(157, 0, 255, 0.1);
+}
+
+/* ---------- layout grid ---------- */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 22em;
+  gap: 2em;
+  align-items: start;
+}
+
+.main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  min-width: 0;
+}
+
+.side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* ---------- greeting ---------- */
+
+.greeting h4 {
+  margin: 0 0 0.3em 0;
+  color: #8a8a93;
+  font-weight: 600;
+}
+
+.greeting h1 {
+  font-size: 2.2em;
+  margin: 0 0 0.2em 0;
+}
+
+.greeting .subtext {
+  color: #8a8a93;
+  margin: 0;
+}
+
+/* ---------- shared card shell ---------- */
+
+.dash-card {
+  background: white;
+  border-radius: 1.6em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.6em 1.8em;
+}
+
+.section-label {
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  color: rgb(157, 0, 255);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- playstyle stat bars ---------- */
+
+.playstyleContainer {
+  background: white;
+  border-radius: 1.6em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.6em 1.8em;
+}
+
+.playstyleContainer .section-label {
+  margin-bottom: 1em;
 }
 
 .playstyle-icons {
   display: flex;
-  gap: 2.5em;
-  
-}
-.playstyleContainer{
-  border-radius: 2em;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
-  padding: 2em;
+  gap: 1.5em;
 }
 
 .playstyle {
+  flex: 1;
   display: flex;
-  gap: 1em;
   flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
   text-align: center;
-  margin: 0;
+  border: none;
   padding: 0;
-  border-left: 2px solid rgba(0, 0, 0, .1);
-  border-right: 2px solid rgba(0, 0, 0, .1);
-  padding-left: 1em;
-  padding-right: 1em;
 }
 
 .styleTitle {
-  font-size: .8em;
-}
-
-.ovr {
-  font-size: 2em;
+  font-size: 0.75em;
+  color: #8a8a93;
+  letter-spacing: 0.03em;
   margin: 0;
 }
 
-.main {
+.ovr {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-bar {
+  width: 100%;
+  height: 0.4em;
+  border-radius: 1em;
+  background: rgba(157, 0, 255, 0.12);
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 1em;
+  background: rgb(157, 0, 255);
+}
+
+/* ---------- quests ---------- */
+
+.quests-card {
+  background: white;
+  border-radius: 1.6em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.6em 1.8em;
+}
+
+.quests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.view-all {
   color: rgb(157, 0, 255);
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quest-row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.8em 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.quest-row:first-of-type {
+  border-top: none;
+}
+
+.quest-icon {
+  width: 2.6em;
+  height: 2.6em;
+  min-width: 2.6em;
+  border-radius: 50%;
+  background: rgba(157, 0, 255, 0.1);
+  color: rgb(157, 0, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+}
+
+.quest-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.quest-info h4 {
+  margin: 0 0 0.15em 0;
+  font-size: 1em;
+}
+
+.quest-info p {
+  margin: 0;
+  font-size: 0.85em;
+  color: #8a8a93;
+}
+
+.quest-progress {
+  font-size: 0.85em;
+  color: #8a8a93;
+  white-space: nowrap;
+}
+
+.quest-btn {
+  width: auto;
+  padding: 0.6em 1.4em;
+  font-size: 0.85em;
+}
+
+/* ---------- promo banner ---------- */
+
+.promo-banner {
+  background: linear-gradient(90deg, rgba(157, 0, 255, 0.06), rgba(157, 0, 255, 0.02));
+  border-radius: 1.6em;
+  padding: 1.6em 1.8em;
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.promo-icon {
+  width: 3.2em;
+  height: 3.2em;
+  min-width: 3.2em;
+  border-radius: 50%;
+  background: rgb(157, 0, 255);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.promo-text {
+  flex: 1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.promo-btn {
+  width: auto;
+  padding: 0.7em 1.5em;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* ---------- player card ---------- */
+
+.player-card {
+  position: relative;
+  background: linear-gradient(160deg, rgb(38, 0, 58), rgb(90, 0, 130) 60%, rgb(157, 0, 255));
+  border-radius: 1.4em 1.4em 3em 3em;
+  padding: 1.6em 1.6em 1.2em;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 1px 1px 16px rgba(90, 0, 130, 0.35);
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ovr-num {
+  display: block;
   font-size: 2em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ovr-label {
+  display: block;
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5em;
+}
+
+.position-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.15em 0.6em;
+  border-radius: 0.4em;
+  font-size: 0.75em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+
+.role-tag {
+  display: block;
+  background: white;
+  color: rgb(157, 0, 255);
+  padding: 0.15em 0.6em;
+  border-radius: 0.4em;
+  font-size: 0.7em;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.player-silhouette {
+  font-size: 5em;
+  color: rgba(0, 0, 0, 0.55);
+  margin: -0.3em 0 0.1em;
+}
+
+.player-name {
+  font-size: 1.4em;
+  letter-spacing: 0.05em;
+  margin: 0.2em 0 0.1em;
+}
+
+.player-club {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 0.8em;
+}
+
+.player-stats-row {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.8em;
+}
+
+.player-stats-row div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.player-stats-row span {
+  font-size: 0.65em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.player-stats-row strong {
+  font-size: 1.1em;
+}
+
+/* ---------- streak widget ---------- */
+
+.streak-widget h4 {
+  margin: 0 0 0.4em;
+  font-size: 0.85em;
+  color: #8a8a93;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.streak-widget h4 i {
+  color: #ff8a00;
+}
+
+.streak-num {
+  font-size: 2.4em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.streak-widget p {
+  margin: 0 0 0.8em;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.streak-widget .muted {
+  display: block;
+  font-weight: 400;
+  color: #8a8a93;
+  font-size: 0.85em;
+}
+
+.streak-days {
+  display: flex;
+  gap: 0.4em;
+}
+
+.day {
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  background: rgba(0, 0, 0, 0.06);
+  color: #8a8a93;
+}
+
+.day.done {
+  background: rgb(157, 0, 255);
+  color: white;
+}
+
+/* ---------- level widget ---------- */
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+}
+
+.level-bar {
+  width: 100%;
+  height: 0.6em;
+  border-radius: 1em;
+  background: rgba(157, 0, 255, 0.12);
+  overflow: hidden;
+  margin-bottom: 0.5em;
+}
+
+.level-fill {
+  height: 100%;
+  border-radius: 1em;
+  background: rgb(157, 0, 255);
+}
+
+/* ---------- weekly progress ---------- */
+
+.weekly-widget h4 {
+  margin: 0 0 0.8em;
+  font-size: 0.85em;
+  color: #8a8a93;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.sparkline {
+  width: 100%;
+  height: auto;
+}
+
+.sparkline polyline {
+  fill: none;
+  stroke: rgb(157, 0, 255);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sparkline circle {
+  fill: rgb(157, 0, 255);
+}
+
+.week-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7em;
+  color: #8a8a93;
+  margin-top: 0.4em;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }

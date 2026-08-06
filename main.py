@@ -61,7 +61,12 @@ class Api():
             
             username = data.get("username")
             return random_phrases.get(str(random.randint(1,31))).format(username)
-            
+    def getStats(self):
+        from manageAcc import Account
+
+        user = checkfile.read(current_config_file)  
+        user_object = Account(user.get("username"), user.get("meta"),user.get("pace"), user.get("acceleration"), user.get("physical"), user.get("vision"))    
+        return user_object.giveStatsDict() 
             
 
 

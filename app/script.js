@@ -22,12 +22,32 @@ const signupErrorMsg = document.getElementById("signupErrorMsg");
 
 // placeholder login screen
 const loadLoginScreen = document.getElementById("loadLoginScreen"); 
+
+// home screen 
+const paceHolder = document.getElementById("paceHolder");
+const paceBar = document.getElementById("paceBar");
+
+const accHolder = document.getElementById("accHolder");
+const accBar = document.getElementById("accBar");
+
+const physicalHolder = document.getElementById("physicalHolder");
+const physicalBar = document.getElementById("physicalBar");
+
+const metaHolder = document.getElementById("metaHolder");
+const metaBar = document.getElementById("metaBar");
+
+const visionHolder = document.getElementById("visionHolder");
+const visionBar = document.getElementById("visionBar");
+
+const cardOvr = document.getElementById("cardOvr");
+
 // hide all initial screens
 
 hide(musicPlayer);
 hide(signupScreen);
 hide(loginScreen);
 hide(homeScreen);
+
 const notFilledError = "Please fill up all corresponding fields!"
 
 function load(divLoader, div){
@@ -40,6 +60,23 @@ async function initHomeScreen(){
     body.style.display = "block"; 
     body.style.background = "white"; 
     await greetUser()
+    let player_stats = await window.pywebview.api.getStats();
+    paceHolder.textContent = player_stats.pace;
+    paceBar.style.width = `${player_stats.pace}%`;
+
+    accHolder.textContent = player_stats.acceleration;
+    accBar.style.width = `${player_stats.acceleration}%`
+
+    physicalHolder.textContent = player_stats.physical;
+    physicalBar.style.width = `${player_stats.physical}%`
+
+    metaHolder.textContent = player_stats.meta;
+    metaBar.style.width = `${player_stats.meta}%`
+
+    visionHolder.textContent = player_stats.vision;
+    visionBar.style.width = `${player_stats.vision}%`
+
+    cardOvr.textContent = player_stats.overall;
 }
 
 setTimeout(() => load(loadLoginScreen, loginScreen), 3000);

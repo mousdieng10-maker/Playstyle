@@ -1,0 +1,530 @@
+{
+  "all_rounder": {
+    "archetype": "All Rounder",
+    "desc": "Decent in all archetypes, tech literacy, reading, physicality,",
+    "lower_quests": [
+      {
+        "quest_name": "Hydrate 500ml Water + 5 Squats",
+        "difficulty": "lower",
+        "attributes": ["physical", "acceleration"],
+        "description": "Drink a large glass of water and perform 5 bodyweight squats to kickstart your day."
+      },
+      {
+        "quest_name": "Clean Desk 1 Min + Read 1 Page",
+        "difficulty": "lower",
+        "attributes": ["pace", "meta"],
+        "description": "Clear your workspace for 60 seconds, then immediately read one page of non-fiction."
+      },
+      {
+        "quest_name": "Write Today's Goal + 3 Push-Ups",
+        "difficulty": "lower",
+        "attributes": ["vision", "physical"],
+        "description": "Jot down your primary daily goal and complete 3 incline or standard push-ups."
+      },
+      {
+        "quest_name": "1-Minute Typing Test + 10 Jumping Jacks",
+        "difficulty": "lower",
+        "attributes": ["pace", "physical"],
+        "description": "Complete a 60-second typing accuracy drill followed by 10 quick jumping jacks."
+      },
+      {
+        "quest_name": "Look Up 1 Tech Word + 15s Plank",
+        "difficulty": "lower",
+        "attributes": ["meta", "physical"],
+        "description": "Read the definition of an unfamiliar technical concept while holding a 15-second plank."
+      }
+    ],
+    "medium_quests": [
+      {
+        "quest_name": "1 km Easy Jog + Read 5 Pages",
+        "difficulty": "medium",
+        "attributes": ["physical", "meta"],
+        "description": "Jog 1 easy kilometer continuous and read 5 pages of an informative book."
+      },
+      {
+        "quest_name": "10 Push-Ups + Write 15-Line Script",
+        "difficulty": "medium",
+        "attributes": ["physical", "meta"],
+        "description": "Execute 10 clean push-ups and write a basic Python script using a loop."
+      },
+      {
+        "quest_name": "10-Minute Workspace Clean + 15 Squats",
+        "difficulty": "medium",
+        "attributes": ["acceleration", "physical"],
+        "description": "Organize your room or desk for 10 minutes and perform 15 deep bodyweight squats."
+      },
+      {
+        "quest_name": "5-Minute Typing Drill + 45s Plank",
+        "difficulty": "medium",
+        "attributes": ["pace", "physical"],
+        "description": "Complete a 5-minute keyboarding practice session and hold a solid 45-second forearm plank."
+      },
+      {
+        "quest_name": "Plan Daily Schedule + 5 Bodyweight Rows",
+        "difficulty": "medium",
+        "attributes": ["vision", "physical"],
+        "description": "Map out your key daily time blocks and complete 5 inverted bodyweight rows or 1 pull-up."
+      }
+    ],
+    "higher_quest": [
+      {
+        "quest_name": "2.5 km Run + Read 15 Pages",
+        "difficulty": "higher",
+        "attributes": ["physical", "meta"],
+        "description": "Run 2.5 kilometers continuous and read 15 pages while taking brief margin notes."
+      },
+      {
+        "quest_name": "25-Minute Focus Sprint + 20 Push-Ups",
+        "difficulty": "higher",
+        "attributes": ["acceleration", "physical"],
+        "description": "Complete a 25-minute uninterrupted work block and execute 20 total push-ups."
+      },
+      {
+        "quest_name": "Code CLI Tool + 3 Strict Pull-Ups",
+        "difficulty": "higher",
+        "attributes": ["meta", "physical"],
+        "description": "Build a simple terminal utility script and perform 3 strict pull-ups."
+      },
+      {
+        "quest_name": "20-Minute Bike Ride + Write 250-Word Summary",
+        "difficulty": "higher",
+        "attributes": ["physical", "meta"],
+        "description": "Cycle for 20 minutes continuous and draft a 250-word book or project reflection."
+      },
+      {
+        "quest_name": "Solve 1 Logic Puzzle + 30 Squats",
+        "difficulty": "higher",
+        "attributes": ["meta", "physical"],
+        "description": "Solve an algorithmic coding or logic puzzle and complete 30 deep squats."
+      }
+    ],
+    "exceptional_quests": [
+      {
+        "quest_name": "4 km Continuous Run + Read 30 Pages",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "meta"],
+        "description": "Run 4 kilometers without walking and complete 30 pages of non-fiction reading."
+      },
+      {
+        "quest_name": "30 Push-Ups + Write 500-Word Essay",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "meta"],
+        "description": "Complete 30 clean push-ups in a workout and write a structured 500-word essay."
+      },
+      {
+        "quest_name": "Build Interactive Todo Web App + 2-Min Plank",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "physical"],
+        "description": "Build a functional HTML/CSS/JS To-Do web app and hold a continuous 2-minute plank."
+      },
+      {
+        "quest_name": "25-Minute Bodyweight Routine + Read 1 Chapter",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "meta"],
+        "description": "Complete a full 25-minute bodyweight circuit and finish an entire textbook chapter."
+      },
+      {
+        "quest_name": "Prep Healthy Meals + Organize Digital Files",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "vision"],
+        "description": "Batch prep healthy meals for tomorrow and restructure your digital cloud directory."
+      }
+    ]
+  },
+  "tekkers": {
+    "desc": "Specializes in tech, anything computer, they can and will do.",
+    "archetype": "Tekkers",
+    "lower_quests": [
+      {
+        "quest_name": "1-Minute Typing Speed Test",
+        "difficulty": "lower",
+        "attributes": ["pace", "meta"],
+        "description": "Complete a 60-second typing test aiming for high accuracy over raw speed."
+      },
+      {
+        "quest_name": "Run Python Hello World",
+        "difficulty": "lower",
+        "attributes": ["acceleration", "meta"],
+        "description": "Open a terminal or code editor and execute a basic print statement."
+      },
+      {
+        "quest_name": "Create Folder via CLI",
+        "difficulty": "lower",
+        "attributes": ["acceleration", "meta"],
+        "description": "Use the terminal mkdir command to create a new organized directory."
+      },
+      {
+        "quest_name": "Learn 1 Keyboard Shortcut",
+        "difficulty": "lower",
+        "attributes": ["pace", "meta"],
+        "description": "Memorize and successfully use one new code editor or OS keyboard shortcut."
+      },
+      {
+        "quest_name": "Inspect Web Page Element",
+        "difficulty": "lower",
+        "attributes": ["meta"],
+        "description": "Right-click a web page, open browser developer tools, and inspect an element."
+      }
+    ],
+    "medium_quests": [
+      {
+        "quest_name": "Write a 15-Line Python Script",
+        "difficulty": "medium",
+        "attributes": ["meta", "acceleration"],
+        "description": "Write a working script using variables, an if-statement, and a simple loop."
+      },
+      {
+        "quest_name": "Solve 1 Easy Coding Logic Puzzle",
+        "difficulty": "medium",
+        "attributes": ["meta", "pace"],
+        "description": "Complete one beginner-level algorithm puzzle on LeetCode or Codewars."
+      },
+      {
+        "quest_name": "Build a Basic HTML/CSS Card",
+        "difficulty": "medium",
+        "attributes": ["meta", "vision"],
+        "description": "Code a clean HTML web card component styled with basic CSS padding and colors."
+      },
+      {
+        "quest_name": "Git Commit Local Changes",
+        "difficulty": "medium",
+        "attributes": ["acceleration", "meta"],
+        "description": "Stage modified project files and commit them using a clear Git message."
+      },
+      {
+        "quest_name": "Create a Markdown README",
+        "difficulty": "medium",
+        "attributes": ["vision", "meta"],
+        "description": "Write a structured README file featuring section headers, lists, and code blocks."
+      }
+    ],
+    "higher_quest": [
+      {
+        "quest_name": "Write Python Function with Error Handling",
+        "difficulty": "higher",
+        "attributes": ["meta", "acceleration"],
+        "description": "Define a multi-argument function with try/except blocks to catch invalid inputs."
+      },
+      {
+        "quest_name": "Build a Simple Terminal CLI Utility",
+        "difficulty": "higher",
+        "attributes": ["meta", "pace"],
+        "description": "Construct a Python or Node script that takes user terminal flags and processes data."
+      },
+      {
+        "quest_name": "Fetch & Parse Data from a Public API",
+        "difficulty": "higher",
+        "attributes": ["meta", "vision"],
+        "description": "Send a GET request to a public API and display clean parsed JSON outputs."
+      },
+      {
+        "quest_name": "Create & Push GitHub Repository",
+        "difficulty": "higher",
+        "attributes": ["acceleration", "vision"],
+        "description": "Initialize a local repository, link remote origins, and push commits to GitHub."
+      },
+      {
+        "quest_name": "Build a Basic Interactive Web Page",
+        "difficulty": "higher",
+        "attributes": ["meta", "vision"],
+        "description": "Add JavaScript button click handlers to update DOM text dynamically on a page."
+      }
+    ],
+    "exceptional_quests": [
+      {
+        "quest_name": "Build a Complete To-Do List Web App",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "vision"],
+        "description": "Develop a browser app that allows users to add, edit, and delete task items."
+      },
+      {
+        "quest_name": "Automate File Sorting Script",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "pace"],
+        "description": "Write a script that scans your Downloads folder and organizes files by extension."
+      },
+      {
+        "quest_name": "Build a Simple Weather Dashboard",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "vision"],
+        "description": "Connect a frontend interface to a real-time weather API to render live forecasts."
+      },
+      {
+        "quest_name": "Set Up a Local SQLite Database",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "acceleration"],
+        "description": "Create SQLite database tables, insert rows, and write basic SQL SELECT queries."
+      },
+      {
+        "quest_name": "Write Unit Tests covering a Python Module",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "pace"],
+        "description": "Write 5 test cases using pytest or unittest to verify your script functions."
+      }
+    ]
+  },
+  "playmaker": {
+    "archetype": "Playmaker",
+    "desc": "The vision and read is at play here, reading thou shall.",
+    "lower_quests": [
+      {
+        "quest_name": "Read 2 Pages of Non-Fiction",
+        "difficulty": "lower",
+        "attributes": ["meta", "acceleration"],
+        "description": "Read two pages of an educational book to break through initial starting friction."
+      },
+      {
+        "quest_name": "Underline 1 Core Idea",
+        "difficulty": "lower",
+        "attributes": ["vision", "meta"],
+        "description": "Pencil underline the single most important sentence on a read page."
+      },
+      {
+        "quest_name": "Look Up 1 Unfamiliar Word",
+        "difficulty": "lower",
+        "attributes": ["meta"],
+        "description": "Search for the dictionary definition of a new word encountered while reading."
+      },
+      {
+        "quest_name": "Read Book Table of Contents",
+        "difficulty": "lower",
+        "attributes": ["vision"],
+        "description": "Review a book's chapter layout to map out its overarching themes."
+      },
+      {
+        "quest_name": "Write 1 Sentence Page Reflection",
+        "difficulty": "lower",
+        "attributes": ["meta", "vision"],
+        "description": "Write a quick one-sentence summary capturing what you just read."
+      }
+    ],
+    "medium_quests": [
+      {
+        "quest_name": "Read 10 Pages of an Educational Book",
+        "difficulty": "medium",
+        "attributes": ["meta", "acceleration"],
+        "description": "Read 10 consecutive pages maintaining steady focus and comprehension."
+      },
+      {
+        "quest_name": "Write a 3-Sentence Chapter Summary",
+        "difficulty": "medium",
+        "attributes": ["meta", "vision"],
+        "description": "Synthesize a section of reading into three clear, informative summary sentences."
+      },
+      {
+        "quest_name": "Look Up & Learn 3 Vocabulary Words",
+        "difficulty": "medium",
+        "attributes": ["meta", "pace"],
+        "description": "Find three unfamiliar words, define them, and write example sentences."
+      },
+      {
+        "quest_name": "Create 5 Active Recall Study Flashcards",
+        "difficulty": "medium",
+        "attributes": ["meta", "acceleration"],
+        "description": "Convert core concepts from your reading into five question-and-answer study cards."
+      },
+      {
+        "quest_name": "Read 1 Short Article or Essay",
+        "difficulty": "medium",
+        "attributes": ["meta", "vision"],
+        "description": "Read a complete 1,000-word analytical article or essay from start to finish."
+      }
+    ],
+    "higher_quest": [
+      {
+        "quest_name": "Read 25 Pages of Non-Fiction",
+        "difficulty": "higher",
+        "attributes": ["meta", "pace"],
+        "description": "Read 25 pages continuously while highlighting major arguments and takeaways."
+      },
+      {
+        "quest_name": "Write a 250-Word Chapter Analysis",
+        "difficulty": "higher",
+        "attributes": ["meta", "vision"],
+        "description": "Draft a short analytical critique evaluating the claims made in a chapter."
+      },
+      {
+        "quest_name": "Read 1 Full Chapter & Take Bulleted Notes",
+        "difficulty": "higher",
+        "attributes": ["meta", "vision"],
+        "description": "Read an entire chapter and compile structured bullet points of the main thesis."
+      },
+      {
+        "quest_name": "Compare Arguments of 2 Short Articles",
+        "difficulty": "higher",
+        "attributes": ["vision", "meta"],
+        "description": "Write a brief comparative overview contrasting two perspective articles on a topic."
+      },
+      {
+        "quest_name": "Create 15 Study Flashcards for a Topic",
+        "difficulty": "higher",
+        "attributes": ["meta", "acceleration"],
+        "description": "Build an active recall flashcard deck covering 15 key terms or concepts."
+      }
+    ],
+    "exceptional_quests": [
+      {
+        "quest_name": "Read 50 Pages of a Book in One Day",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "pace"],
+        "description": "Complete 50 pages of non-fiction reading across focused sessions in a single day."
+      },
+      {
+        "quest_name": "Write a 500-Word Essay Review of a Book",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "vision"],
+        "description": "Author a structured 500-word review analyzing a book's main arguments and impact."
+      },
+      {
+        "quest_name": "Finish a Short Non-Fiction Book",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "vision"],
+        "description": "Finish reading an entire short non-fiction work (under 100 pages)."
+      },
+      {
+        "quest_name": "Outline a Complete Book Chapter-by-Chapter",
+        "difficulty": "exceptional",
+        "attributes": ["vision", "meta"],
+        "description": "Deconstruct a full book into a multi-page chapter-by-chapter reference guide."
+      },
+      {
+        "quest_name": "Build a 30-Card Master Study Deck",
+        "difficulty": "exceptional",
+        "attributes": ["meta", "acceleration"],
+        "description": "Compile and review 30 digital or physical flashcards covering a full subject unit."
+      }
+    ]
+  },
+  "defender": {
+    "archetype": "Defender",
+    "desc": "Incredibly physical, running, weightlifting, anything that requires muscle.",
+    "lower_quests": [
+      {
+        "quest_name": "400m Light Walk or Jog",
+        "difficulty": "lower",
+        "attributes": ["physical", "pace"],
+        "description": "Complete one easy lap around the track or block to initiate cardiovascular movement."
+      },
+      {
+        "quest_name": "5 Slow Bodyweight Squats",
+        "difficulty": "lower",
+        "attributes": ["physical", "acceleration"],
+        "description": "Execute 5 slow, controlled bodyweight squats focusing on proper knee alignment."
+      },
+      {
+        "quest_name": "15-Second Core Plank",
+        "difficulty": "lower",
+        "attributes": ["physical"],
+        "description": "Hold a clean forearm plank for 15 seconds maintaining a straight back position."
+      },
+      {
+        "quest_name": "3 Incline Push-Ups",
+        "difficulty": "lower",
+        "attributes": ["physical", "acceleration"],
+        "description": "Perform 3 push-ups with hands elevated on a bench or wall."
+      },
+      {
+        "quest_name": "10 Jumping Jacks",
+        "difficulty": "lower",
+        "attributes": ["physical", "pace"],
+        "description": "Do 10 brisk jumping jacks to elevate heart rate and body temperature."
+      }
+    ],
+    "medium_quests": [
+      {
+        "quest_name": "1.5 km Continuous Easy Jog",
+        "difficulty": "medium",
+        "attributes": ["physical", "pace"],
+        "description": "Jog 1.5 kilometers continuous at a relaxed pace without stopping."
+      },
+      {
+        "quest_name": "10 Standard Push-Ups",
+        "difficulty": "medium",
+        "attributes": ["physical", "acceleration"],
+        "description": "Perform 10 standard floor push-ups with chest touching near the ground."
+      },
+      {
+        "quest_name": "15 Air Squats",
+        "difficulty": "medium",
+        "attributes": ["physical"],
+        "description": "Execute 15 bodyweight squats reaching parallel depth on every repetition."
+      },
+      {
+        "quest_name": "45-Second Forearm Plank",
+        "difficulty": "medium",
+        "attributes": ["physical"],
+        "description": "Hold a tight forearm plank for 45 continuous seconds keeping abs braced."
+      },
+      {
+        "quest_name": "10 Dynamic Walking Lunges",
+        "difficulty": "medium",
+        "attributes": ["physical", "pace"],
+        "description": "Perform 10 walking lunges alternating legs with upright posture."
+      }
+    ],
+    "higher_quest": [
+      {
+        "quest_name": "3 km Steady Run",
+        "difficulty": "higher",
+        "attributes": ["physical", "pace"],
+        "description": "Run 3 kilometers continuous maintaining an even target pace."
+      },
+      {
+        "quest_name": "20 Strict Push-Ups",
+        "difficulty": "higher",
+        "attributes": ["physical", "acceleration"],
+        "description": "Complete 20 standard push-ups maintaining rigid form throughout."
+      },
+      {
+        "quest_name": "30 Bodyweight Squats",
+        "difficulty": "higher",
+        "attributes": ["physical"],
+        "description": "Perform 30 continuous squats focusing on controlled speed and depth."
+      },
+      {
+        "quest_name": "90-Second Forearm Plank",
+        "difficulty": "higher",
+        "attributes": ["physical"],
+        "description": "Hold a continuous forearm plank for 90 seconds without sagging hips."
+      },
+      {
+        "quest_name": "3 Strict Pull-Ups or 10 Bar Rows",
+        "difficulty": "higher",
+        "attributes": ["physical", "acceleration"],
+        "description": "Complete 3 full pull-ups from a dead hang or 10 inverted bodyweight rows."
+      }
+    ],
+    "exceptional_quests": [
+      {
+        "quest_name": "5 km Continuous Run",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "pace"],
+        "description": "Run 5 kilometers continuous without stopping, hitting a major endurance target."
+      },
+      {
+        "quest_name": "35 Push-Ups in One Workout Session",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "acceleration"],
+        "description": "Accumulate 35 strict push-ups total across 2 to 3 sets."
+      },
+      {
+        "quest_name": "50 Bodyweight Squats Session",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "pace"],
+        "description": "Perform 50 bodyweight squats in a single workout block."
+      },
+      {
+        "quest_name": "3-Minute Accumulation Plank",
+        "difficulty": "exceptional",
+        "attributes": ["physical"],
+        "description": "Hold a total of 3 minutes in plank position with minimal short rests."
+      },
+      {
+        "quest_name": "25-Minute Full-Body Bodyweight Routine",
+        "difficulty": "exceptional",
+        "attributes": ["physical", "pace"],
+        "description": "Complete a full 25-minute workout circuit mixing push-ups, squats, lunges, and planks."
+      }
+    ]
+  }
+}

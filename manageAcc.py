@@ -16,5 +16,18 @@ class Account:
         self.acceleration = acceleration
         self.physical = physical
         self.vision = vision
-    
+    def calculate_ovr(self):
+        # each stat will be given a certain weight, meta and physical will have the greatest weighs
+        overall = round((self.pace*.24)+(self.meta*.24)+(self.vision*.20)+(self.pace*.20)+(self.acceleration*.11))
+        return overall 
+    def giveStatsDict(self):
+        player_dict = {
+            "pace":self.pace,
+            "meta":self.meta,
+            "acceleration":self.acceleration,
+            "physical":self.physical,
+            "vision":self.vision,
+            "overall":self.calculate_ovr()
+        }
+        return player_dict
 
