@@ -4,53 +4,54 @@
 import {show, showFlex, hide } from "./manageCard.js";
 
 function select(selector) {
-    return document.getElementById(selector);
+    return document.querySelector(selector);
 }
 
-const loginScreen = select("loginScreen");
-const homeScreen = select("homeScreen");
-const pressOn = select("pressOn");
+const loginScreen = select("#loginScreen");
+const homeScreen = select("#homeScreen");
+const pressOn = select("#pressOn");
 
-const usernameInput = select("usernameInput");
-const passwordInput = select("passwordInput");
-const errorMsg = select("errorMsg");
-const loginBtn = select("loginBtn");
-const welcomeMsg = select("welcomeMsg");
-const musicPlayer = select("musicPlayer");
-const body = select("body");
+const usernameInput = select("#usernameInput");
+const passwordInput = select("#passwordInput");
+const errorMsg = select("#errorMsg");
+const loginBtn = select("#loginBtn");
+const welcomeMsg = select("#welcomeMsg");
+const musicPlayer = select("#musicPlayer");
+const body = select("#body");
 
 // sign up screen
-const signupScreen = select("signupScreen");
-const subUsernameInput = select("subUsernameInput");
-const subPasswordInput = select("subPasswordInput");
-const conSubPasswordInput = select("conSubPasswordInput");
-const signupBtn = select("signupBtn");
-const signupErrorMsg = select("signupErrorMsg");
+const signupScreen = select("#signupScreen");
+const subUsernameInput = select("#subUsernameInput");
+const subPasswordInput = select("#subPasswordInput");
+const conSubPasswordInput = select("#conSubPasswordInput");
+const signupBtn = select("#signupBtn");
+const signupErrorMsg = select("#signupErrorMsg");
 
 // placeholder login screen
-const loadLoginScreen = select("loadLoginScreen");
+const loadLoginScreen = select("#loadLoginScreen");
 
 // home screen
-const paceHolder = select("paceHolder");
-const paceBar = select("paceBar");
+const paceHolder = document.querySelectorAll(".paceHolder");
+const paceBar = select("#paceBar");
 
-const accHolder = select("accHolder");
-const accBar = select("accBar");
+const accHolder = document.querySelectorAll(".accHolder");
+const accBar = select("#accBar");
 
-const physicalHolder = select("physicalHolder");
-const physicalBar = select("physicalBar");
+const physicalHolder = document.querySelectorAll(".physicalHolder");
+const physicalBar = select("#physicalBar");
 
-const metaHolder = select("metaHolder");
-const metaBar = select("metaBar");
+const metaHolder = document.querySelectorAll(".metaHolder");
+const metaBar = select("#metaBar");
 
-const visionHolder = select("visionHolder");
-const visionBar = select("visionBar");
+const visionHolder = document.querySelectorAll(".visionHolder");
+const visionBar = select("#visionBar");
 
-const cardOvr = select("cardOvr");
+const cardOvr = select("#cardOvr");
 
-const cardRole = select("cardRole");
-const quests = select("quests");
-const navUsername = select("navUsername");
+const cardRole = select("#cardRole");
+const quests = select("#quests");
+const navUsername = select("#navUsername");
+const cardName = select("#cardName");
 function createTask(title,desc){
     const task = document.createElement("div");
     task.className = "quest-row";
@@ -69,13 +70,17 @@ function createTask(title,desc){
     task.appendChild(goBtn);
     quests.appendChild(task);
 
+    goBtn.onclick = function(){
+        
+    }
+
 }
 // archetype screen
-const archetypeScreen = select("archetypeScreen"); 
-const defender = select("defender");
-const tekkers = select("tekkers");
-const allRounder = select("allRounder"); 
-const playmaker = select("playmaker");
+const archetypeScreen = select("#archetypeScreen"); 
+const defender = select("#defender");
+const tekkers = select("#tekkers");
+const allRounder = select("#allRounder"); 
+const playmaker = select("#playmaker");
 
 async function prepArchetype(name){
     hide(archetypeScreen);
@@ -117,32 +122,36 @@ function load(divLoader, div){
     hide(divLoader);
     showFlex(div); 
 }
-
+function modifyTextContent(nodeArray, dictRef){
+    for(const node of nodeArray){
+        node.textContent = dictRef.pace; 
+    }
+}
 // make the home page a full size screen instead of a widget 
 async function initHomeScreen(){
     body.style.display = "block"; 
     body.style.background = "white"; 
     await greetUser()
     let player_stats = await window.pywebview.api.getStats();
-    paceHolder.textContent = player_stats.pace;
+    modifyTextContent(paceHolder, player_stats);
     paceBar.style.width = `${player_stats.pace}%`;
 
-    accHolder.textContent = player_stats.acceleration;
+    modifyTextContent(accHolder, player_stats);
     accBar.style.width = `${player_stats.acceleration}%`
 
-    physicalHolder.textContent = player_stats.physical;
+    modifyTextContent(physicalHolder, player_stats);
     physicalBar.style.width = `${player_stats.physical}%`
 
-    metaHolder.textContent = player_stats.meta;
+    modifyTextContent(metaHolder, player_stats);
     metaBar.style.width = `${player_stats.meta}%`
 
-    visionHolder.textContent = player_stats.vision;
+    modifyTextContent(visionHolder, player_stats);
     visionBar.style.width = `${player_stats.vision}%`
 
     cardOvr.textContent = player_stats.overall;
     cardRole.textContent = player_stats.playstyle;
     navUsername.textContent = player_stats.username;
-
+    cardName.textContent = player_stats.username; 
     let playstyleDetails = await window.pywebview.api.showQuests()
     for(const playstyle of playstyleDetails.lower_quests){
         createTask(playstyle.quest_name,playstyle.description)
