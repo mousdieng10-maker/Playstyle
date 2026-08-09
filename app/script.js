@@ -58,14 +58,7 @@ const navUsername = select("#navUsername");
 const cardName = select("#cardName");
 const logScreen = select("#logScreen"); 
 
-// hide all initial screens
 
-hide(musicPlayer);
-hide(signupScreen);
-hide(archetypeScreen); 
-hide(homeScreen);
-hide(logScreen);
-hide(logInfoScreen); 
 
 function createTask(title,desc){
     const task = document.createElement("div");
@@ -99,6 +92,15 @@ const defender = select("#defender");
 const tekkers = select("#tekkers");
 const allRounder = select("#allRounder"); 
 const playmaker = select("#playmaker");
+
+// hide all initial screens
+
+hide(musicPlayer);
+hide(signupScreen);
+hide(archetypeScreen); 
+hide(homeScreen);
+hide(logScreen);
+hide(logInfoScreen); 
 
 async function prepArchetype(name){
     hide(archetypeScreen);
