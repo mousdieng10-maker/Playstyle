@@ -46,4 +46,4 @@ class Account:
             playstyle = data.get("tekkers")
         return playstyle 
     def reward_quest(self):
-        pass 
+        data = checkfile.read(quests_config)

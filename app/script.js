@@ -168,7 +168,7 @@ async function initCardScreen(){
             const confirmMsg = await window.pywebview.api.save_log(logInput.value);
             hide(logInfoScreen);
             await initHomeScreen()
-            showFlex(logScreen);
+            showFlex(homeScreen);
         }
         
         
@@ -203,7 +203,14 @@ async function initHomeScreen(){
     cardName.textContent = player_stats.username; 
     let playstyleDetails = await window.pywebview.api.showQuests()
     quests.innerHTML = "";
-    for(const playstyle of playstyleDetails.lower_quests){
+    let sections  = ["lower_quests", "medium_quests", "higher_quest","exceptional_quests"]
+    let acSections = []
+    for(const section of sections){
+        if(playstyleDetails[section].length !== 0){
+            acSections.push(section)
+        }
+    }
+    for(const playstyle of playstyleDetails[acSections[0]]){
         createTask(playstyle.quest_name,playstyle.description)
     }
 }
