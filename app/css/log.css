@@ -1,0 +1,89 @@
+#logScreenCard{
+    border-top:2px solid purple; 
+    border-left:2px solid purple;
+    padding:4em; 
+    border-radius:3em; 
+    backdrop-filter:blur(30px);
+    background:linear-gradient(75deg, rgba(128, 0, 128, 0.607), rgb(97, 0, 97,.4));
+    box-shadow:1px 1px 10px rgba(0,0,0,.2);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    width:fit-content;
+
+}
+
+.largeSilh{
+
+
+    font-size:3em;
+   
+}
+.logInput{
+    width:20em; 
+    height:3em; 
+    border:none; 
+    border-radius:3em; 
+    color:white;
+
+    background:rgba(0,0,0,.3);
+    backdrop-filter:blur(30px); 
+    box-shadow:1px 1px 10px rgba(0,0,0,.2);
+
+}
+.logInput::placeholder{
+    color:rgb(166, 166, 166);
+}
+.silhInsideLog{
+    display:flex;
+    justify-content:center;
+}
+.statFlex{
+    display:flex;
+    flex-direction:column; 
+}
+.stat-name{
+    font-size:2em; 
+    color:white;
+    text-shadow:1px 1px 10px rgba(0,0,0,.2);
+    margin-bottom:.3em;
+    
+}
+.stat{
+    font-size:3em;
+    font-weight:900;
+    color:rgb(255, 0, 255);
+    text-shadow:1px 1px 30px rgb(255, 0, 255);
+    box-shadow:1px 1px 10px rgba(0,0,0,.2);
+    padding:.2em;
+    border-radius:.4em;
+    background:rgba(0,0,0,.4);
+}
+.stat-gold{
+    font-size:3em;
+    font-weight:900;
+    color:gold; 
+    text-shadow:1px 1px 30px gold;
+    box-shadow:1px 1px 10px rgba(0,0,0,.2);
+    padding:.2em;
+    border-radius:.4em;
+    background:rgba(0,0,0,.4);
+    animation: shine 1s infinite; 
+}
+@keyframes shine{
+    0% {
+        text-shadow:1px 1px 30px gold;
+    }
+    65% {
+
+        text-shadow:1px 1px 10px gold;
+    }
+
+    100%{font-size:3em; text-shadow:1px 1px 30px gold;}
+}
+#logScreen{
+    display:flex;
+    gap:2em;
+    flex-direction:column;
+    justify-content:center;
+}

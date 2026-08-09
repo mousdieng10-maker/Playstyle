@@ -85,7 +85,13 @@ class Api():
     def showQuests(self):
         user = self.get_user_obj()
         return user.assignPlaystyle()
-        
+    
+    def save_log(self, log_to_save):
+        data = checkfile.read(make_path("log.json"))
+        data[f"log num {len(data)+1}"] = log_to_save
+        re.write(make_path("log.json"), data)
+        return("Houbini Boubini! Job done, upgrade time!")
+
 
 api = Api()
 webview.create_window("Playstyle", "app/index.html", js_api=api)

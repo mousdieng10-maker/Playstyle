@@ -26,6 +26,9 @@ const subPasswordInput = select("#subPasswordInput");
 const conSubPasswordInput = select("#conSubPasswordInput");
 const signupBtn = select("#signupBtn");
 const signupErrorMsg = select("#signupErrorMsg");
+const logInfoScreen = select("#logInfoScreen"); 
+
+
 
 // placeholder login screen
 const loadLoginScreen = select("#loadLoginScreen");
@@ -52,6 +55,8 @@ const cardRole = select("#cardRole");
 const quests = select("#quests");
 const navUsername = select("#navUsername");
 const cardName = select("#cardName");
+const logScreen = select("#logScreen"); 
+
 function createTask(title,desc){
     const task = document.createElement("div");
     task.className = "quest-row";
@@ -70,7 +75,10 @@ function createTask(title,desc){
     task.appendChild(goBtn);
     quests.appendChild(task);
 
-    goBtn.onclick = function(){
+    goBtn.onclick = async function(){
+        hide(homeScreen)
+
+        initCardScreen()
         
     }
 
@@ -115,6 +123,8 @@ hide(musicPlayer);
 hide(signupScreen);
 hide(archetypeScreen); 
 hide(homeScreen);
+hide(logScreen);
+hide(logInfoScreen); 
 
 const notFilledError = "Please fill up all corresponding fields!"
 
@@ -126,6 +136,41 @@ function modifyTextContent(nodeArray, dictRef){
     for(const node of nodeArray){
         node.textContent = dictRef.pace; 
     }
+}
+// full size the card 
+async function initCardScreen(){
+    body.style.display = "flex";
+    hide(homeScreen); 
+    show(logInfoScreen);
+
+    body.style.background = 'url("assets/cardRevealBg.png")';
+    const logInput = document.createElement("input"); 
+    logInput.className = "logInput";
+    logInput.placeholder = "type info about the task here:";
+    const submitLog = document.createElement("button");
+    submitLog.textContent = "log for Today";
+    const logDiv = document.createElement("div");
+    logDiv.style.display = "flex"; 
+    logDiv.style.gap = "1em";
+    logInfoScreen.appendChild(logDiv);
+    logDiv.appendChild(logInput);
+    logDiv.appendChild(submitLog); 
+    submitLog.onclick = async function(){
+        if(logInput.value.split() === ""){
+            return 
+        }
+        else{
+            const confirmMsg = await window.pywebview.api.save_log(logInput.value);
+            hide(logInfoScreen);
+            showFlex(logScreen); 
+            
+        }
+        
+        
+    }
+    showFlex(logScreen);
+    
+
 }
 // make the home page a full size screen instead of a widget 
 async function initHomeScreen(){

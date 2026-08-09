@@ -19,7 +19,7 @@ class Account:
         self.playstyle = playstyle
     def calculate_ovr(self):
         # each stat will be given a certain weight, meta and physical will have the greatest weighs
-        overall = round((self.pace*.24)+(self.meta*.24)+(self.vision*.20)+(self.pace*.20)+(self.acceleration*.11))
+        overall = round((self.pace*.24)+(self.meta*.24)+(self.vision*.20)+(self.physical*.20)+(self.acceleration*.11))
         return overall 
     def giveStatsDict(self):
         player_dict = {
@@ -45,3 +45,4 @@ class Account:
         elif self.playstyle == "tekkers":
             playstyle = data.get("tekkers")
         return playstyle 
+    
