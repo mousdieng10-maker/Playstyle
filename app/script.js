@@ -32,6 +32,7 @@ const logInfoScreen = select("#logInfoScreen");
 
 // placeholder login screen
 const loadLoginScreen = select("#loadLoginScreen");
+setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 // home screen
 const paceHolder = document.querySelectorAll(".paceHolder");
@@ -57,6 +58,15 @@ const navUsername = select("#navUsername");
 const cardName = select("#cardName");
 const logScreen = select("#logScreen"); 
 
+// hide all initial screens
+
+hide(musicPlayer);
+hide(signupScreen);
+hide(archetypeScreen); 
+hide(homeScreen);
+hide(logScreen);
+hide(logInfoScreen); 
+
 function createTask(title,desc){
     const task = document.createElement("div");
     task.className = "quest-row";
@@ -75,11 +85,11 @@ function createTask(title,desc){
     task.appendChild(goBtn);
     quests.appendChild(task);
 
+    
     goBtn.onclick = async function(){
         hide(homeScreen)
-
-        initCardScreen()
-        
+        await window.pywebview.api.rid_task(taskTitle.textContent) 
+        await initCardScreen()
     }
 
 }
@@ -117,14 +127,6 @@ playmaker.onclick = async function(){
 }
 
 
-// hide all initial screens
-
-hide(musicPlayer);
-hide(signupScreen);
-hide(archetypeScreen); 
-hide(homeScreen);
-hide(logScreen);
-hide(logInfoScreen); 
 
 const notFilledError = "Please fill up all corresponding fields!"
 
@@ -132,9 +134,9 @@ function load(divLoader, div){
     hide(divLoader);
     showFlex(div); 
 }
-function modifyTextContent(nodeArray, dictRef){
+function modifyTextContent(nodeArray, dictRef, what){
     for(const node of nodeArray){
-        node.textContent = dictRef.pace; 
+        node.textContent = dictRef[what]; 
     }
 }
 // full size the card 
@@ -142,7 +144,7 @@ async function initCardScreen(){
     body.style.display = "flex";
     hide(homeScreen); 
     show(logInfoScreen);
-
+    logInfoScreen.innerHTML = "";
     body.style.background = 'url("assets/cardRevealBg.png")';
     const logInput = document.createElement("input"); 
     logInput.className = "logInput";
@@ -155,20 +157,20 @@ async function initCardScreen(){
     logInfoScreen.appendChild(logDiv);
     logDiv.appendChild(logInput);
     logDiv.appendChild(submitLog); 
+    let questDetails = await window.pywebview.api.showQuests()
     submitLog.onclick = async function(){
-        if(logInput.value.split() === ""){
+        if(logInput.value === ""){
             return 
         }
         else{
             const confirmMsg = await window.pywebview.api.save_log(logInput.value);
             hide(logInfoScreen);
-            showFlex(logScreen); 
-            
+            await initHomeScreen()
+            showFlex(logScreen);
         }
         
         
     }
-    showFlex(logScreen);
     
 
 }
@@ -178,19 +180,19 @@ async function initHomeScreen(){
     body.style.background = "white"; 
     await greetUser()
     let player_stats = await window.pywebview.api.getStats();
-    modifyTextContent(paceHolder, player_stats);
+    modifyTextContent(paceHolder, player_stats, "pace");
     paceBar.style.width = `${player_stats.pace}%`;
 
-    modifyTextContent(accHolder, player_stats);
+    modifyTextContent(accHolder, player_stats, "acceleration");
     accBar.style.width = `${player_stats.acceleration}%`
 
-    modifyTextContent(physicalHolder, player_stats);
+    modifyTextContent(physicalHolder, player_stats, "physical");
     physicalBar.style.width = `${player_stats.physical}%`
 
-    modifyTextContent(metaHolder, player_stats);
+    modifyTextContent(metaHolder, player_stats, "meta");
     metaBar.style.width = `${player_stats.meta}%`
 
-    modifyTextContent(visionHolder, player_stats);
+    modifyTextContent(visionHolder, player_stats, "vision");
     visionBar.style.width = `${player_stats.vision}%`
 
     cardOvr.textContent = player_stats.overall;
@@ -198,12 +200,12 @@ async function initHomeScreen(){
     navUsername.textContent = player_stats.username;
     cardName.textContent = player_stats.username; 
     let playstyleDetails = await window.pywebview.api.showQuests()
+    quests.innerHTML = "";
     for(const playstyle of playstyleDetails.lower_quests){
         createTask(playstyle.quest_name,playstyle.description)
     }
 }
 
-setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 // compare two strings
 function compare(string1, string2){

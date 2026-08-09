@@ -91,7 +91,36 @@ class Api():
         data[f"log num {len(data)+1}"] = log_to_save
         re.write(make_path("log.json"), data)
         return("Houbini Boubini! Job done, upgrade time!")
+    def rid_task(self, task_to_remove):
+        found = False 
+        def search_list(list_to_search, quest_level):
+            for task in list_to_search:
+                if task.get("quest_name") == task_to_remove:
+                    point_playstyle.get(quest_level).remove(task)
+                    return True            
 
+        data = checkfile.read(make_path("quests.json"))
+        user = checkfile.read(make_path("currentAcc.json"))
+        point_playstyle = data.get(user.get("playstyle"))
+        
+        while found != True:
+            found = search_list(point_playstyle.get("lower_quests"), "lower_quests")
+            if found == True:
+                break
+            found = search_list(point_playstyle.get("medium_quests"), "medium_quests")
+            if found == True:
+                break
+            found = search_list(point_playstyle.get("higher_quest"), "higher_quest")
+            if found == True:
+                break
+            found = search_list(point_playstyle.get("exceptional_quests"), "exceptional_quests")
+            if found == True:
+                break
+            if found != True:
+                break 
+        re.write(make_path("quests.json"), data)
+            
+        
 
 api = Api()
 webview.create_window("Playstyle", "app/index.html", js_api=api)

@@ -196,15 +196,6 @@
         "archetype": "Tekkers",
         "lower_quests": [
             {
-                "quest_name": "Create Folder via CLI",
-                "difficulty": "lower",
-                "attributes": [
-                    "acceleration",
-                    "meta"
-                ],
-                "description": "Use the terminal's mkdir command to set up a new directory, as organized as a well-drilled defensive shape."
-            },
-            {
                 "quest_name": "Learn 1 Keyboard Shortcut",
                 "difficulty": "lower",
                 "attributes": [

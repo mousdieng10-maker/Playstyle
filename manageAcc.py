@@ -45,4 +45,5 @@ class Account:
         elif self.playstyle == "tekkers":
             playstyle = data.get("tekkers")
         return playstyle 
-    
+    def reward_quest(self):
+        pass 
