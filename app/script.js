@@ -181,6 +181,7 @@ async function initHomeScreen(){
     body.style.display = "block"; 
     body.style.background = "white"; 
     await greetUser()
+    const rewardTask = await window.pywebview.api.reward_task();
     let player_stats = await window.pywebview.api.getStats();
     modifyTextContent(paceHolder, player_stats, "pace");
     paceBar.style.width = `${player_stats.pace}%`;

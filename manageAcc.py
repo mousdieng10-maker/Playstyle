@@ -1,12 +1,12 @@
 from pathlib import Path
 import checkfile
 import random 
-
+import rewrite as re
 
 abs_path = Path(__file__).resolve().parent
 #show where config files are located
 current_config_file = abs_path/"config"/"currentAcc.json"
-config_file = abs_path/"config"/"currentAcc.json"
+config_file = abs_path/"config"/"accounts.json"
 quests_config = abs_path/"config"/"quests.json"
 class Account:
     def __init__(self, name, meta,pace, acceleration, physical, vision, playstyle):
@@ -36,14 +36,38 @@ class Account:
     
     def assignPlaystyle(self):
         data = checkfile.read(quests_config)
-        if self.playstyle == "defender":
-            playstyle = data.get("defender")
-        elif self.playstyle == "playmaker":
-            playstyle = data.get("playmaker")
-        elif self.playstyle == "all_rounder":
-            playstyle = data.get("all_rounder")
-        elif self.playstyle == "tekkers":
-            playstyle = data.get("tekkers")
+        playstyle = data.get(self.playstyle)
         return playstyle 
     def reward_quest(self):
-        data = checkfile.read(quests_config)
+        upgrade_list = ["pace","meta","acceleration","vision","physical"]
+        defender_list = ["pace","pace","pace", "physical","physical","physical","physical", "acceleration","meta"]
+        tekkers_list = ["pace","pace","pace", "vision", "vision", "meta"]
+        all_rounder_list = upgrade_list
+        playmaker_list = ["pace","meta","meta","meta","acceleration","vision","vision","vision","physical"]
+        assign_dict  = {
+            "defender":defender_list,
+            "tekkers":tekkers_list, 
+            "all_rounder":all_rounder_list, 
+            "playmaker":playmaker_list
+        }
+        stat_to_upg = random.choice(assign_dict.get(self.playstyle))
+        setattr(self, stat_to_upg, getattr(self,stat_to_upg)+2)
+    def update_json(self):
+        self.reward_quest()
+        data = checkfile.read(current_config_file)
+        root_data = checkfile.read(config_file)
+        data["pace"]= self.pace
+        data["acceleration"]= self.acceleration
+        data["meta"]= self.meta
+        data["vision"]= self.vision
+        data["physical"]= self.physical
+        for account in root_data:
+            if account.get("username") == self.name:
+                account["pace"] = self.physical
+                account["acceleration"]= self.acceleration
+                account["meta"]= self.meta
+                account["vision"]= self.vision
+                account["physical"]= self.physical
+        re.write(current_config_file,data)
+        re.write(config_file, root_data)
+

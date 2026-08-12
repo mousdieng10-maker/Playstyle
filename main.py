@@ -119,7 +119,11 @@ class Api():
             if found != True:
                 break 
         re.write(make_path("quests.json"), data)
-            
+    def reward_task(self):
+        player = self.get_user_obj() 
+        player.update_json()
+        return "+2" 
+
         
 
 api = Api()
