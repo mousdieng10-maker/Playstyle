@@ -3,8 +3,8 @@
 .musicPlayer {
   border-radius: 3em;
   padding: 1em;
-  padding-left:2em;
-  padding-right:2em;
+  padding-left:4em;
+  padding-right:4em;
   width: fit-content;
   display: flex;
   flex-direction: column;

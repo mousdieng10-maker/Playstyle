@@ -35,6 +35,8 @@ const logInfoScreen = select("#logInfoScreen");
 const loadLoginScreen = select("#loadLoginScreen");
 
 // home screen
+const play = select("#play")
+const audioSource = select("#audioSource"); 
 const musicBackBtn = select("#musicBackBtn"); 
 const paceHolder = document.querySelectorAll(".paceHolder");
 const paceBar = select("#paceBar");
@@ -59,6 +61,7 @@ const navUsername = select("#navUsername");
 const cardName = select("#cardName");
 const logScreen = select("#logScreen"); 
 
+const audioPlayer = select("#audioPlayer");
 
 
 function createTask(title,desc){
@@ -104,6 +107,8 @@ hide(homeScreen);
 hide(logScreen);
 hide(logInfoScreen); 
 showFlex(loadLoginScreen)
+hide(audioPlayer)
+hide(loginScreen);
 
 setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
@@ -118,19 +123,25 @@ async function prepArchetype(name){
 
 defender.onclick = async function(){
     prepArchetype("defender");
-
+    musicPlayer.style.position = "fixed";
 }
 tekkers.onclick = async function(){
     prepArchetype("tekkers");
+    musicPlayer.style.position = "fixed";
+
 
 }
 allRounder.onclick = async function(){
     prepArchetype("all_rounder");
+    musicPlayer.style.position = "fixed";
+
     
 
 }
 playmaker.onclick = async function(){
     prepArchetype("playmaker");
+    musicPlayer.style.position = "fixed";
+
 
 }
 
@@ -148,6 +159,10 @@ function modifyTextContent(nodeArray, dictRef, what){
     for(const node of nodeArray){
         node.textContent = dictRef[what]; 
     }
+}
+// start music
+play.onclick = async function(){
+    
 }
 // full size the card 
 async function initCardScreen(){
@@ -177,6 +192,8 @@ async function initCardScreen(){
             hide(logInfoScreen);
             const rewardTask = await window.pywebview.api.reward_task();
             await initHomeScreen()
+            const selectMusic = await window.pywebview.api.music()
+            
             showFlex(homeScreen);
         }
         
@@ -254,6 +271,10 @@ loginBtn.addEventListener("click", async () =>{
         else{
             hide(loginScreen);
             await initHomeScreen()
+            const selectMusic = await window.pywebview.api.music()
+            audioSource.src = selectMusic;
+            audioPlayer.load();
+            audioPlayer.play();
             showFlex(homeScreen);
         }
     }
@@ -280,6 +301,13 @@ signupBtn.addEventListener("click", async () => {
             }
             else{
                 hide(signupScreen);
+                showFlex(musicPlayer);
+                musicPlayer.style.position = "relative";
+
+                const selectMusic = await window.pywebview.api.music()
+                audioSource.src = selectMusic;
+                audioPlayer.load();
+                audioPlayer.play();
                 showFlex(archetypeScreen); 
             }
         }

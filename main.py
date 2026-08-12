@@ -122,7 +122,13 @@ class Api():
     def reward_task(self):
         player = self.get_user_obj() 
         player.update_json()
-        return "+2" 
+        return "+2"
+    def music(self):
+        import random
+        data = checkfile.read(abs_path/"app"/"music"/"musicSelection.json")
+        music_to_play = random.choice(data)
+        print(music_to_play.get("link"))
+        return music_to_play.get("link")
 
         
 
