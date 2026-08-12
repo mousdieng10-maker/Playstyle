@@ -35,7 +35,8 @@ const logInfoScreen = select("#logInfoScreen");
 const loadLoginScreen = select("#loadLoginScreen");
 
 // home screen
-const play = select("#play")
+const playerCard = select("#playerCard");
+const play = select("#play");
 const audioSource = select("#audioSource"); 
 const musicBackBtn = select("#musicBackBtn"); 
 const paceHolder = document.querySelectorAll(".paceHolder");
@@ -98,19 +99,6 @@ const tekkers = select("#tekkers");
 const allRounder = select("#allRounder"); 
 const playmaker = select("#playmaker");
 
-// hide all initial screens
-
-hide(musicPlayer);
-hide(signupScreen);
-hide(archetypeScreen); 
-hide(homeScreen);
-hide(logScreen);
-hide(logInfoScreen); 
-showFlex(loadLoginScreen)
-hide(audioPlayer)
-hide(loginScreen);
-
-setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 async function prepArchetype(name){
     hide(archetypeScreen);
@@ -171,7 +159,7 @@ async function initCardScreen(){
     show(logInfoScreen);
     logInfoScreen.innerHTML = "";
     body.style.background = 'url("assets/cardRevealBg.png")';
-    const logInput = document.createElement("input"); 
+    const logInput = document.createElement("textarea"); 
     logInput.className = "logInput";
     logInput.placeholder = "type info about the task here:";
     const submitLog = document.createElement("button");
@@ -179,6 +167,12 @@ async function initCardScreen(){
     const logDiv = document.createElement("div");
     logDiv.style.display = "flex"; 
     logDiv.style.gap = "1em";
+    const logTitle = document.createElement("div"); 
+    const insideLogTitle = document.createElement("h1");
+    insideLogTitle.style.fontSize = "3em";
+    insideLogTitle.textContent = "Log in your experience here."; 
+    logTitle.appendChild(insideLogTitle); 
+    logInfoScreen.appendChild(logInfoScreen); 
     logInfoScreen.appendChild(logDiv);
     logDiv.appendChild(logInput);
     logDiv.appendChild(submitLog); 
@@ -210,6 +204,8 @@ async function initHomeScreen(){
     body.style.display = "block"; 
     body.style.background = "white"; 
     await greetUser()
+    const cardSrc = await window.pywebview.api.assign_card()
+    playerCard.style.backgroundImage = `url(${cardSrc})`
     let player_stats = await window.pywebview.api.getStats();
     modifyTextContent(paceHolder, player_stats, "pace");
     paceBar.style.width = `${player_stats.pace}%`;
@@ -243,6 +239,19 @@ async function initHomeScreen(){
         createTask(playstyle.quest_name,playstyle.description)
     }
 }
+// hide all initial screens
+
+hide(musicPlayer);
+hide(signupScreen);
+hide(archetypeScreen); 
+hide(homeScreen);
+hide(logScreen);
+hide(logInfoScreen); 
+showFlex(loadLoginScreen)
+hide(audioPlayer)
+hide(loginScreen);
+
+setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 
 // compare two strings

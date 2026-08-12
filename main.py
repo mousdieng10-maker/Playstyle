@@ -129,6 +129,17 @@ class Api():
         music_to_play = random.choice(data)
         print(music_to_play.get("link"))
         return music_to_play.get("link")
+    def assign_card(self):
+        user = self.get_user_obj()
+        cards = checkfile.read(make_path("cards.json"))
+        if  50 <= user.calculate_ovr() < 67:
+            return cards.get("bronze")
+        elif 67 <= user.calculate_ovr() < 83:
+            return cards.get("gold")
+        elif 83 <= user.calculate_ovr() < 90:
+            return cards.get("diamond")
+        elif 90 <= user.calculate_ovr() <= 99:
+            return cards.get("ruby")
 
         
 

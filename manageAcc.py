@@ -51,7 +51,7 @@ class Account:
             "playmaker":playmaker_list
         }
         stat_to_upg = random.choice(assign_dict.get(self.playstyle))
-        setattr(self, stat_to_upg, getattr(self,stat_to_upg)+2)
+        setattr(self, stat_to_upg, getattr(self,stat_to_upg)+4)
     def update_json(self):
         self.reward_quest()
         data = checkfile.read(current_config_file)

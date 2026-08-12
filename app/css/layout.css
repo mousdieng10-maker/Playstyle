@@ -3,9 +3,9 @@
 .flex {
   display: flex;
   justify-content: space-between;
-  border-radius: 10em;
-  background: white;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.316);
+  border-radius: 2em;
+  background: rgb(249, 228, 255);
+  box-shadow:1px 1px 10px rgba(0, 0, 0, 0.643); 
 }
 
 .card {
@@ -38,7 +38,7 @@
 .title {
   width: 50em;
   height: 100%;
-  border-radius: 10em;
+  border-radius: 2em;
 }
 
 .speBorderBe {
