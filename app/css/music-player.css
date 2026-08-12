@@ -2,7 +2,9 @@
 
 .musicPlayer {
   border-radius: 3em;
-  padding: 4em;
+  padding: 1em;
+  padding-left:2em;
+  padding-right:2em;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -11,12 +13,14 @@
   justify-content: center;
   gap: 1em;
   align-items: center;
+  position:fixed;
   margin-right: 1em;
+  margin-top:30em;
 }
 
 #musicWidget {
-  width: 20em;
-  height: 20em;
+  width: 10em;
+  height: 10em;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
   border-radius: 1em;
 }
@@ -28,6 +32,7 @@
 
 .imgBtn {
   transition: .2s;
+  width:3em;
 }
 
 .imgBtn:hover {

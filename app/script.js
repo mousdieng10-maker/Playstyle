@@ -10,6 +10,7 @@ function select(selector) {
 const loginScreen = select("#loginScreen");
 const homeScreen = select("#homeScreen");
 const pressOn = select("#pressOn");
+const musicPlayerBtn = select("#musicPlayerBtn");
 
 const usernameInput = select("#usernameInput");
 const passwordInput = select("#passwordInput");
@@ -32,9 +33,9 @@ const logInfoScreen = select("#logInfoScreen");
 
 // placeholder login screen
 const loadLoginScreen = select("#loadLoginScreen");
-setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 // home screen
+const musicBackBtn = select("#musicBackBtn"); 
 const paceHolder = document.querySelectorAll(".paceHolder");
 const paceBar = select("#paceBar");
 
@@ -86,6 +87,7 @@ function createTask(title,desc){
     }
 
 }
+
 // archetype screen
 const archetypeScreen = select("#archetypeScreen"); 
 const defender = select("#defender");
@@ -101,6 +103,9 @@ hide(archetypeScreen);
 hide(homeScreen);
 hide(logScreen);
 hide(logInfoScreen); 
+showFlex(loadLoginScreen)
+
+setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
 async function prepArchetype(name){
     hide(archetypeScreen);
@@ -110,6 +115,7 @@ async function prepArchetype(name){
     
 
 }
+
 defender.onclick = async function(){
     prepArchetype("defender");
 
@@ -128,7 +134,9 @@ playmaker.onclick = async function(){
 
 }
 
-
+musicBackBtn.onclick = function(){
+    hide(musicPlayer)
+}
 
 const notFilledError = "Please fill up all corresponding fields!"
 
@@ -167,6 +175,7 @@ async function initCardScreen(){
         else{
             const confirmMsg = await window.pywebview.api.save_log(logInput.value);
             hide(logInfoScreen);
+            const rewardTask = await window.pywebview.api.reward_task();
             await initHomeScreen()
             showFlex(homeScreen);
         }
@@ -176,12 +185,14 @@ async function initCardScreen(){
     
 
 }
+musicPlayerBtn.onclick = async function(){
+    showFlex(musicPlayer)    
+}
 // make the home page a full size screen instead of a widget 
 async function initHomeScreen(){
     body.style.display = "block"; 
     body.style.background = "white"; 
     await greetUser()
-    const rewardTask = await window.pywebview.api.reward_task();
     let player_stats = await window.pywebview.api.getStats();
     modifyTextContent(paceHolder, player_stats, "pace");
     paceBar.style.width = `${player_stats.pace}%`;
