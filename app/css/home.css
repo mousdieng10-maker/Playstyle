@@ -181,10 +181,14 @@
 .quests-card {
   background: white;
   border-radius: 1.6em;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+  
   padding: 1.6em 1.8em;
 }
-
+.surround{
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border:2px solid rgba(182, 140, 255, 0.349);
+  border-radius:1.6em;
+}
 .quests-header {
   display: flex;
   justify-content: space-between;
@@ -251,6 +255,9 @@
   padding: 0.6em 1.4em;
   font-size: 0.85em;
 }
+.gradient{
+  background:linear-gradient(50deg, rgba(183, 119, 255, 0.1),rgba(212, 163, 255, 0.1), rgba(183, 119, 255, 0.1));
+}
 
 /* ---------- promo banner ---------- */
 
@@ -297,8 +304,9 @@
   position: relative;
   background: url("../assets/bronzeCard\(1\).png");
   color: white;
+  filter:saturate(200%);
   background-size:cover;
-  aspect-ratio: 257/379;  
+  aspect-ratio: 355/570;  
   text-align: center;
   overflow: hidden;
   display:flex;
@@ -372,7 +380,7 @@
 
 .player-stats-row {
   display: flex;
-  gap:1em;
+  gap:.8em;
   justify-content:center;
   padding-top: 0.8em;
   font-size:1.4em;

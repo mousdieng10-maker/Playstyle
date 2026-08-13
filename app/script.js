@@ -161,18 +161,24 @@ async function initCardScreen(){
     body.style.background = 'url("assets/cardRevealBg.png")';
     const logInput = document.createElement("textarea"); 
     logInput.className = "logInput";
+    logInput.style.padding = "2em";
+    logInput.style.color = "white";
+    logInput.style.fontSize = "1.5em";
     logInput.placeholder = "type info about the task here:";
     const submitLog = document.createElement("button");
     submitLog.textContent = "log for Today";
+    submitLog.style.height = "3em";
     const logDiv = document.createElement("div");
     logDiv.style.display = "flex"; 
     logDiv.style.gap = "1em";
     const logTitle = document.createElement("div"); 
     const insideLogTitle = document.createElement("h1");
     insideLogTitle.style.fontSize = "3em";
+    insideLogTitle.style.color = "white";
+
     insideLogTitle.textContent = "Log in your experience here."; 
     logTitle.appendChild(insideLogTitle); 
-    logInfoScreen.appendChild(logInfoScreen); 
+    logInfoScreen.appendChild(logTitle); 
     logInfoScreen.appendChild(logDiv);
     logDiv.appendChild(logInput);
     logDiv.appendChild(submitLog); 
@@ -282,8 +288,8 @@ loginBtn.addEventListener("click", async () =>{
             await initHomeScreen()
             const selectMusic = await window.pywebview.api.music()
             audioSource.src = selectMusic;
-            audioPlayer.load();
-            audioPlayer.play();
+            //audioPlayer.load();
+            //audioPlayer.play();
             showFlex(homeScreen);
         }
     }
@@ -315,8 +321,8 @@ signupBtn.addEventListener("click", async () => {
 
                 const selectMusic = await window.pywebview.api.music()
                 audioSource.src = selectMusic;
-                audioPlayer.load();
-                audioPlayer.play();
+                //audioPlayer.load();
+                //audioPlayer.play();
                 showFlex(archetypeScreen); 
             }
         }

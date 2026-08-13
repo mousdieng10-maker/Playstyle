@@ -50,8 +50,12 @@ class Account:
             "all_rounder":all_rounder_list, 
             "playmaker":playmaker_list
         }
-        stat_to_upg = random.choice(assign_dict.get(self.playstyle))
-        setattr(self, stat_to_upg, getattr(self,stat_to_upg)+4)
+        while True:
+            stat_to_upg = random.choice(assign_dict.get(self.playstyle))
+            if getattr(self, stat_to_upg) <= 95:
+                setattr(self, stat_to_upg, getattr(self,stat_to_upg)+4)
+                break 
+
     def update_json(self):
         self.reward_quest()
         data = checkfile.read(current_config_file)

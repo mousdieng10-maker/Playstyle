@@ -61,7 +61,7 @@ class Api():
             random_phrases = checkfile.read(make_path("greetList.json"))
             
             username = data.get("username")
-            return random_phrases.get(str(random.randint(1,31))).format(username)
+            return random_phrases.get(str(random.randint(1,32))).format(username)
     def get_user_obj(self):
         from manageAcc import Account
         user = checkfile.read(current_config_file)  
@@ -146,4 +146,4 @@ class Api():
 api = Api()
 webview.create_window("Playstyle", "app/index.html", js_api=api)
 
-webview.start()
+webview.start(debug=True)

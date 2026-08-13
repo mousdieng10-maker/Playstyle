@@ -227,7 +227,7 @@
             <p class="subtext">Do it today.</p>
           </div>
 
-          <div class="playstyleContainer">
+          <div class="playstyleContainer surround gradient">
             <h3 class="section-label">YOUR PLAYSTYLE</h3>
             <div class="playstyle-icons">
 
@@ -269,7 +269,7 @@
             </div>
           </div>
 
-          <div class="quests-card" id="quests">
+          <div class="quests-card surround gradient" id="quests">
             <div class="quests-header">
               <h3 class="section-label">TODAY'S QUESTS</h3>
               <span class="view-all" id="viewAllQuests">View all</span>
@@ -278,7 +278,7 @@
             
           </div>
 
-          <div class="promo-banner">
+          <div class="promo-banner surround gradient">
             <div class="promo-icon"><i class="fa-solid fa-futbol"></i></div>
             <p class="promo-text">Complete quests, improve stats,<br>become the best version of you.</p>
             <button class="promo-btn" id="howItWorksBtn"><i class="fa-solid fa-play"></i> How it works</button>
@@ -287,25 +287,27 @@
         </div>
 
         <div class="side-col">
-
+          <div class="surround gradient">
           <div class="player-card" id="playerCard">
               <div style="display:flex; justify-content:center; align-items:center; gap:10em; margin-bottom:1em;">
-                <span class="ovr-num" id="cardOvr">78</span>
-                <span class="role-tag" id="cardRole">Playmaker</span>
+                <span class="ovr-num" id="cardOvr" style="color:black;">78</span>
+                <span class="role-tag" id="cardRole" style="color:black;">Playmaker</span>
               </div>
-            <div class="player-silhouette"><i class="fa-solid fa-user"></i></div>
-            <h2 class="player-name" id="cardName">LEGEND</h2>
-            <p class="player-club"><i class="fa-solid fa-flag"></i> Playstyle FC</p>
+            <div class="player-silhouette"><i class="fa-solid fa-user" style="opacity:1;"></i></div>
+            <h2 class="player-name" style="color:black;" id="cardName">LEGEND</h2>
+            <p class="player-club" style="color:black;"><i class="fa-solid fa-flag"></i> Playstyle FC</p>
             <div class="player-stats-row">
-              <div><span>PAC</span><strong class="paceHolder">76</strong></div>
-              <div><span>ACC</span><strong class="accHolder">70</strong></div>
-              <div><span>PHY</span><strong class="physicalHolder">81</strong></div>
-              <div><span>MET</span><strong class="metaHolder">79</strong></div>
-              <div><span>VIS</span><strong class="visionHolder">77</strong></div>
+              <div><span style="color:black;">PAC</span><strong  style="color:black;" class="paceHolder">76</strong></div>
+              <div><span style="color:black;">ACC</span><strong style="color:black;" class="accHolder">70</strong></div>
+              <div><span style="color:black;">PHY</span><strong style="color:black;" class="physicalHolder">81</strong></div>
+              <div><span style="color:black;" >MET</span><strong  style="color:black;" class="metaHolder">79</strong></div>
+              <div><span style="color:black;">VIS</span><strong  style="color:black;" class="visionHolder">77</strong></div>
             </div>
+            
+          </div>
           </div>
 
-          <div class="dash-card streak-widget">
+          <div class="dash-card streak-widget surround gradient">
             <h4><i class="fa-solid fa-fire"></i> STREAK</h4>
             <div class="streak-num" id="streakCount">12</div>
             <p>DAYS<br><span class="muted">Keep it going!</span></p>
@@ -320,13 +322,13 @@
             </div>
           </div>
 
-          <div class="dash-card">
+          <div class="dash-card surround gradient">
             <div class="level-header"><span id="levelLabel">LEVEL 8</span><span id="xpLabel">620 / 1000 XP</span></div>
             <div class="level-bar"><div class="level-fill" id="levelFill" style="width:62%"></div></div>
             <p class="muted">Next reward at Level 9</p>
           </div>
 
-          <div class="dash-card weekly-widget">
+          <div class="dash-card weekly-widget surround gradient">
             <h4><i class="fa-solid fa-chart-line"></i> WEEKLY PROGRESS</h4>
             <svg class="sparkline" viewBox="0 0 300 120" preserveAspectRatio="none">
               <polyline points="0,100 43,90 86,95 129,60 172,50 215,55 258,25 300,30" />
@@ -359,6 +361,7 @@
       
       </div>
 
+ 
 <script type="module" src="script.js"></script>
 
 </body>
