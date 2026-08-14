@@ -303,13 +303,17 @@
 .player-card {
   position: relative;
   background: url("../assets/bronzeCard\(1\).png");
+  border-radius:2em;
   color: white;
-  filter:saturate(200%);
-  background-size:cover;
+  width:25em;
+  height:auto;
+  filter:saturate(120%);
   aspect-ratio: 355/570;  
   text-align: center;
   overflow: hidden;
   display:flex;
+  background-size:cover; 
+  background-position:center;
   flex-direction:column;
   justify-content:center;
   background-repeat:no-repeat;

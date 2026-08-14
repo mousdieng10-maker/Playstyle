@@ -11,7 +11,7 @@ const loginScreen = select("#loginScreen");
 const homeScreen = select("#homeScreen");
 const pressOn = select("#pressOn");
 const musicPlayerBtn = select("#musicPlayerBtn");
-
+const pressOnLogin = select("#pressOnLogin");
 const usernameInput = select("#usernameInput");
 const passwordInput = select("#passwordInput");
 const errorMsg = select("#errorMsg");
@@ -65,6 +65,11 @@ const logScreen = select("#logScreen");
 const audioPlayer = select("#audioPlayer");
 
 
+pressOnLogin.onclick = function(){
+    hide(signupScreen);
+    showFlex(loginScreen);
+}
+
 function createTask(title,desc){
     const task = document.createElement("div");
     task.className = "quest-row";
@@ -85,7 +90,6 @@ function createTask(title,desc){
 
     
     goBtn.onclick = async function(){
-        hide(homeScreen)
         await window.pywebview.api.rid_task(taskTitle.textContent) 
         await initCardScreen()
     }
@@ -154,51 +158,74 @@ play.onclick = async function(){
 }
 // full size the card 
 async function initCardScreen(){
-    body.style.display = "flex";
-    hide(homeScreen); 
     show(logInfoScreen);
     logInfoScreen.innerHTML = "";
-    body.style.background = 'url("assets/cardRevealBg.png")';
-    const logInput = document.createElement("textarea"); 
-    logInput.className = "logInput";
-    logInput.style.padding = "2em";
-    logInput.style.color = "white";
-    logInput.style.fontSize = "1.5em";
-    logInput.placeholder = "type info about the task here:";
-    const submitLog = document.createElement("button");
-    submitLog.textContent = "log for Today";
-    submitLog.style.height = "3em";
-    const logDiv = document.createElement("div");
-    logDiv.style.display = "flex"; 
-    logDiv.style.gap = "1em";
-    const logTitle = document.createElement("div"); 
-    const insideLogTitle = document.createElement("h1");
-    insideLogTitle.style.fontSize = "3em";
-    insideLogTitle.style.color = "white";
+    logInfoScreen.style.opacity = "0";
+    logInfoScreen.className = "logScreenAni";
+    setTimeout(() => {
+        const logInput = document.createElement("textarea"); 
+        logInput.className = "logInput";
+        logInput.style.padding = "2em";
+        logInput.style.color = "white";
+        logInput.style.fontSize = "1.5em";
+        logInput.placeholder = "type info about the task here:";
+        const submitLog = document.createElement("button");
+        submitLog.textContent = "log for Today";
+        submitLog.style.height = "3em";
+        const logDiv = document.createElement("div");
+        logDiv.style.opacity = "0";
+        
+        logDiv.style.display = "flex"; 
+        logDiv.style.flexDirection = "column";
+        logDiv.style.gap = "1em";
+        const logTitle = document.createElement("div"); 
+        logTitle.style.opacity = "0";
+        const insideLogTitle = document.createElement("h1");
+        insideLogTitle.style.fontSize = "3em";
+        insideLogTitle.style.color = "white";
+        logDiv.className = "downAni";
+        logTitle.className = "downAni";
+        insideLogTitle.textContent = "Don't slack off lol, really describe it."; 
+        logTitle.appendChild(insideLogTitle); 
+        logInfoScreen.appendChild(logTitle); 
+        logInfoScreen.appendChild(logDiv);
+        
+        logDiv.appendChild(logInput);
+        logDiv.appendChild(submitLog);
+            submitLog.onclick = async function(){
+                if(logInput.value === ""){
+                    return 
+                }
+                else{
+                    const confirmMsg = await window.pywebview.api.save_log(logInput.value);
+                    hide(logDiv);
+                    hide(logTitle);
+                    playerCard.classList.add("initAni");
+                    setTimeout(() =>{playerCard.classList.add("initShake");}, 2000);
+                    logTitle.textContent = "The card is unstable! Press it to level up!" 
+                    show(logTitle);
+                    
 
-    insideLogTitle.textContent = "Log in your experience here."; 
-    logTitle.appendChild(insideLogTitle); 
-    logInfoScreen.appendChild(logTitle); 
-    logInfoScreen.appendChild(logDiv);
-    logDiv.appendChild(logInput);
-    logDiv.appendChild(submitLog); 
-    let questDetails = await window.pywebview.api.showQuests()
-    submitLog.onclick = async function(){
-        if(logInput.value === ""){
-            return 
-        }
-        else{
-            const confirmMsg = await window.pywebview.api.save_log(logInput.value);
-            hide(logInfoScreen);
-            const rewardTask = await window.pywebview.api.reward_task();
-            await initHomeScreen()
-            const selectMusic = await window.pywebview.api.music()
+                    const rewardTask = await window.pywebview.api.reward_task();
+                    playerCard.onclick = async function(){
+                        playerCard.classList.remove("initShake");
+                        await initHomeScreen();
+                        playerCard.classList.remove("initAni");
+                        hide(logInfoScreen);
+                    }
+                    
+                }
             
-            showFlex(homeScreen);
+            
         }
-        
-        
-    }
+    },2000)
+    logInfoScreen.style.background = `rgba(0,0,0,.9)`;
+    logInfoScreen.style.width = "100%";
+    logInfoScreen.style.height = "100%";
+    logInfoScreen.style.position = "fixed";
+    
+    let questDetails = await window.pywebview.api.showQuests()
+    
     
 
 }
@@ -324,6 +351,7 @@ signupBtn.addEventListener("click", async () => {
                 //audioPlayer.load();
                 //audioPlayer.play();
                 showFlex(archetypeScreen); 
+                await window.pywebview.api.populate_quests();
             }
         }
         else{

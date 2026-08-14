@@ -1,18 +1,33 @@
 #logScreenCard{
-    border-top:2px solid purple; 
-    border-left:2px solid purple;
-    padding:4em; 
-    border-radius:3em; 
-    backdrop-filter:blur(30px);
-    background:linear-gradient(75deg, rgba(128, 0, 128, 0.607), rgb(97, 0, 97,.4));
+    
     box-shadow:1px 1px 10px rgba(0,0,0,.2);
     color:white;
     display:flex;
     flex-direction:column;
-    width:fit-content;
+    aspect-ratio:355/570;
 
 }
+.logScreenAni{
+    animation:logScreenIn 2s forwards;
+}
+@keyframes logScreenIn {
+    0% {
 
+    }
+    100% {
+        opacity:1; 
+    }
+}
+.downAni{
+    animation: downAndIn 1s forwards; 
+}
+@keyframes downAndIn{
+    0%{}
+    100%{
+        opacity:1;
+        transform:translateY(10em);
+    }
+}
 .largeSilh{
 
 
@@ -21,16 +36,17 @@
 }
 .logInput{
     width:55em;
-    height:60em; 
+    height:35em;
+    margin-top:1em; 
 
     border:none; 
     padding:1em; 
     border-radius:3em; 
     color:white;
 
-    background:rgba(0,0,0,.3);
-    backdrop-filter:blur(30px); 
-    box-shadow:1px 1px 10px rgba(0,0,0,.2);
+    background:rgba(157,0,255,.4);
+    backdrop-filter:blur(200px); 
+    box-shadow:1px 1px 10px rgba(157, 0, 255, 0.2);
 
 }
 .logInput::placeholder{
@@ -72,6 +88,37 @@
     background:rgba(0,0,0,.4);
     animation: shine 1s infinite; 
 }
+.initAni{
+    position:fixed;
+    animation: shift 2s forwards;
+    left:40%;
+    top:20%;
+    right:50%;
+    transform:scale(1.2); 
+}
+.initShake{
+    animation:shake .5s infinite; 
+}
+@keyframes shake{
+    0%{
+        
+    }
+    25%{
+        transform:rotate(10deg);
+    }
+    50%{
+        transform:rotate(-10deg); 
+    }
+    75%{
+        transform:rotate(10deg);
+    }
+    100%{
+        transform:rotate(-10deg); 
+        box-shadow:1px 1px 30px gold;
+    }
+}
+
+
 @keyframes shine{
     0% {
         text-shadow:1px 1px 30px gold;

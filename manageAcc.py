@@ -7,7 +7,7 @@ abs_path = Path(__file__).resolve().parent
 #show where config files are located
 current_config_file = abs_path/"config"/"currentAcc.json"
 config_file = abs_path/"config"/"accounts.json"
-quests_config = abs_path/"config"/"quests.json"
+quests_config = abs_path/"config"/"activeQuests.json"
 class Account:
     def __init__(self, name, meta,pace, acceleration, physical, vision, playstyle):
         self.name = name
@@ -57,7 +57,6 @@ class Account:
                 break 
 
     def update_json(self):
-        self.reward_quest()
         data = checkfile.read(current_config_file)
         root_data = checkfile.read(config_file)
         data["pace"]= self.pace

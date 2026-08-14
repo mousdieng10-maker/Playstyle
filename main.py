@@ -99,7 +99,7 @@ class Api():
                     point_playstyle.get(quest_level).remove(task)
                     return True            
 
-        data = checkfile.read(make_path("quests.json"))
+        data = checkfile.read(make_path("activeQuests.json"))
         user = checkfile.read(make_path("currentAcc.json"))
         point_playstyle = data.get(user.get("playstyle"))
         
@@ -118,9 +118,10 @@ class Api():
                 break
             if found != True:
                 break 
-        re.write(make_path("quests.json"), data)
+        re.write(make_path("activeQuests.json"), data)
     def reward_task(self):
         player = self.get_user_obj() 
+        player.reward_quest()
         player.update_json()
         return "+2"
     def music(self):
@@ -140,10 +141,16 @@ class Api():
             return cards.get("diamond")
         elif 90 <= user.calculate_ovr() <= 99:
             return cards.get("ruby")
+    def populate_quests(self):
+        data = checkfile.read(make_path("quests.json"))
+        re.write(make_path("activeQuests.json"), data)
+    def onclose(self):
+        user = self.get_user_obj()
+        user.update_json()
 
         
 
 api = Api()
-webview.create_window("Playstyle", "app/index.html", js_api=api)
-
-webview.start(debug=True)
+window = webview.create_window("Playstyle", "app/index.html", js_api=api)
+window.events.closed += api.onclose
+webview.start()
