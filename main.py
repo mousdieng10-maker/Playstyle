@@ -121,9 +121,12 @@ class Api():
         re.write(make_path("activeQuests.json"), data)
     def reward_task(self):
         player = self.get_user_obj() 
-        player.reward_quest()
+        upg_name = player.reward_quest()
         player.update_json()
-        return "+2"
+        return upg_name
+   
+            
+
     def music(self):
         import random
         data = checkfile.read(abs_path/"app"/"music"/"musicSelection.json")
@@ -153,4 +156,4 @@ class Api():
 api = Api()
 window = webview.create_window("Playstyle", "app/index.html", js_api=api)
 window.events.closed += api.onclose
-webview.start()
+webview.start(debug=True)

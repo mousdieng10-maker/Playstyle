@@ -201,17 +201,38 @@ async function initCardScreen(){
                     hide(logDiv);
                     hide(logTitle);
                     playerCard.classList.add("initAni");
-                    setTimeout(() =>{playerCard.classList.add("initShake");}, 2000);
-                    logTitle.textContent = "The card is unstable! Press it to level up!" 
+
+                    playerCard.addEventListener("transitionend", () =>{playerCard.classList.add("initShake");}, {once:true});
+                    insideLogTitle.textContent = "The card is unstable! Press it to level up!" 
                     show(logTitle);
                     
 
                     const rewardTask = await window.pywebview.api.reward_task();
+                    console.log(rewardTask)
                     playerCard.onclick = async function(){
                         playerCard.classList.remove("initShake");
-                        await initHomeScreen();
-                        playerCard.classList.remove("initAni");
-                        hide(logInfoScreen);
+                        const statList = {"pace":paceHolder, "acceleration":accHolder, "vision":visionHolder, "meta":metaHolder, "physical":physicalHolder};
+                        const dataToChange = statList[rewardTask]; 
+                        console.log(dataToChange)
+                        for(const node of dataToChange){
+                            node.classList.add("stat-gold");
+                            node.classList.add("shakeStat"); 
+                        }
+                        
+                        setTimeout(async () => {
+                            await initHomeScreen();         
+                            
+                            setTimeout(() => {               
+                                playerCard.classList.remove("initAni");
+                                for (const node of dataToChange) {
+                                    node.classList.remove("stat-gold");
+                                    node.classList.remove("statShake");
+                                }
+                                hide(logInfoScreen);
+                            }, 1500);   
+
+                        }, 500);
+                            
                     }
                     
                 }

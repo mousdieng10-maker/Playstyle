@@ -40,21 +40,17 @@ class Account:
         return playstyle 
     def reward_quest(self):
         upgrade_list = ["pace","meta","acceleration","vision","physical"]
-        defender_list = ["pace","pace","pace", "physical","physical","physical","physical", "acceleration","meta"]
-        tekkers_list = ["pace","pace","pace", "vision", "vision", "meta"]
-        all_rounder_list = upgrade_list
-        playmaker_list = ["pace","meta","meta","meta","acceleration","vision","vision","vision","physical"]
-        assign_dict  = {
-            "defender":defender_list,
-            "tekkers":tekkers_list, 
-            "all_rounder":all_rounder_list, 
-            "playmaker":playmaker_list
-        }
+        
         while True:
-            stat_to_upg = random.choice(assign_dict.get(self.playstyle))
-            if getattr(self, stat_to_upg) <= 95:
-                setattr(self, stat_to_upg, getattr(self,stat_to_upg)+4)
-                break 
+            stat_to_upg = random.choice(upgrade_list)
+            if getattr(self, stat_to_upg) <= 84:
+                setattr(self, stat_to_upg, getattr(self,stat_to_upg)+15)
+                print(stat_to_upg)
+                return stat_to_upg 
+            else:
+                add_amount = 99 - getattr(self,stat_to_upg)
+                setattr(self,stat_to_upg,getattr(self,stat_to_upg), add_amount)
+                
 
     def update_json(self):
         data = checkfile.read(current_config_file)
