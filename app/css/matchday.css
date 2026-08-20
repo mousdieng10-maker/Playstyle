@@ -1,0 +1,74 @@
+.score{
+    font-size:3em; 
+}
+#matchdayScreen{
+    background:url("../assets/cardRevealBg.png"); 
+    display:flex;
+    flex-direction:column; 
+    gap:2em;
+    align-items:center;
+    min-height:100vh; 
+    
+    padding:2em;
+
+}
+#userScore{
+    color:rgb(255, 0, 255);
+    text-shadow:1px 1px 30px rgb(255, 0, 255);
+}
+#oppScore{
+    color:red; 
+    text-shadow:1px 1px 30px red; 
+}
+.score-card{
+    display:flex;
+    justify-content:center; 
+    width:90%;
+    border-left:4px solid rgba(128, 0, 128, 0.894);
+    border-bottom:4px solid rgba(128, 0, 128, 0.894); 
+    border-top:4px solid rgba(193, 0, 193, 0.894); 
+    border-right:4px solid rgba(193, 0, 193, 0.894); 
+    color:white; 
+ 
+    background:rgba(128, 0, 128, 0.259); 
+    border-radius:3em;
+    backdrop-filter:blur(100px); 
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.364);
+    height:10em; 
+    padding:2em; 
+}
+.card-card{
+    width:90%;
+    border-left:4px solid rgba(128, 0, 128, 0.894);
+    border-bottom:4px solid rgba(128, 0, 128, 0.894); 
+    border-top:4px solid rgba(193, 0, 193, 0.894); 
+    border-right:4px solid rgba(193, 0, 193, 0.894); 
+    color:white; 
+    background:rgba(128, 0, 128, 0.259); 
+    border-radius:3em;
+    backdrop-filter:blur(100px); 
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.364);
+    padding:2em; 
+}
+.card-section{
+    display:flex;
+    gap:3em; 
+}
+.opp-card{
+  position: relative;
+  background: url("../assets/bronzeCard\(1\).png");
+  border-radius:2em;
+  color: white;
+  width:25em;
+  height:auto;
+  filter:saturate(120%);
+  aspect-ratio: 355/570;  
+  text-align: center;
+  overflow: hidden;
+  display:flex;
+  background-size:cover; 
+  background-position:center;
+  flex-direction:column;
+  justify-content:center;
+  background-repeat:no-repeat;
+}

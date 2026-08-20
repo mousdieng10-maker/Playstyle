@@ -1,0 +1,502 @@
+[
+    {
+        "name": "Scarlett Flores",
+        "tier": "low",
+        "pace": 54,
+        "acceleration": 53,
+        "vision": 57,
+        "meta": 56,
+        "physical": 58,
+        "ovr": 56
+    },
+    {
+        "name": "Henry Nguyen",
+        "tier": "low",
+        "pace": 53,
+        "acceleration": 56,
+        "vision": 52,
+        "meta": 52,
+        "physical": 54,
+        "ovr": 53
+    },
+    {
+        "name": "Hannah Walker",
+        "tier": "low",
+        "pace": 50,
+        "acceleration": 58,
+        "vision": 53,
+        "meta": 53,
+        "physical": 56,
+        "ovr": 54
+    },
+    {
+        "name": "Charlotte Scott",
+        "tier": "low",
+        "pace": 57,
+        "acceleration": 59,
+        "vision": 56,
+        "meta": 54,
+        "physical": 54,
+        "ovr": 56
+    },
+    {
+        "name": "Emily Garcia",
+        "tier": "low",
+        "pace": 53,
+        "acceleration": 52,
+        "vision": 50,
+        "meta": 51,
+        "physical": 51,
+        "ovr": 51
+    },
+    {
+        "name": "Chloe Thomas",
+        "tier": "low",
+        "pace": 54,
+        "acceleration": 56,
+        "vision": 52,
+        "meta": 51,
+        "physical": 59,
+        "ovr": 54
+    },
+    {
+        "name": "Jack Baker",
+        "tier": "low",
+        "pace": 56,
+        "acceleration": 56,
+        "vision": 58,
+        "meta": 53,
+        "physical": 53,
+        "ovr": 55
+    },
+    {
+        "name": "John Lee",
+        "tier": "low",
+        "pace": 50,
+        "acceleration": 54,
+        "vision": 59,
+        "meta": 50,
+        "physical": 56,
+        "ovr": 54
+    },
+    {
+        "name": "Riley Ramirez",
+        "tier": "low",
+        "pace": 54,
+        "acceleration": 56,
+        "vision": 54,
+        "meta": 50,
+        "physical": 54,
+        "ovr": 54
+    },
+    {
+        "name": "Benjamin White",
+        "tier": "low",
+        "pace": 55,
+        "acceleration": 51,
+        "vision": 52,
+        "meta": 52,
+        "physical": 51,
+        "ovr": 52
+    },
+    {
+        "name": "Ella Mitchell",
+        "tier": "shallow",
+        "pace": 67,
+        "acceleration": 59,
+        "vision": 62,
+        "meta": 65,
+        "physical": 61,
+        "ovr": 63
+    },
+    {
+        "name": "Sofia Lopez",
+        "tier": "shallow",
+        "pace": 66,
+        "acceleration": 59,
+        "vision": 61,
+        "meta": 67,
+        "physical": 65,
+        "ovr": 64
+    },
+    {
+        "name": "Isabella Williams",
+        "tier": "shallow",
+        "pace": 66,
+        "acceleration": 63,
+        "vision": 60,
+        "meta": 64,
+        "physical": 62,
+        "ovr": 63
+    },
+    {
+        "name": "Lucas Hall",
+        "tier": "shallow",
+        "pace": 66,
+        "acceleration": 62,
+        "vision": 64,
+        "meta": 62,
+        "physical": 60,
+        "ovr": 63
+    },
+    {
+        "name": "Mason Gonzalez",
+        "tier": "shallow",
+        "pace": 64,
+        "acceleration": 67,
+        "vision": 61,
+        "meta": 63,
+        "physical": 61,
+        "ovr": 63
+    },
+    {
+        "name": "Amelia Robinson",
+        "tier": "shallow",
+        "pace": 66,
+        "acceleration": 66,
+        "vision": 67,
+        "meta": 61,
+        "physical": 62,
+        "ovr": 64
+    },
+    {
+        "name": "Matthew Brown",
+        "tier": "shallow",
+        "pace": 63,
+        "acceleration": 65,
+        "vision": 62,
+        "meta": 61,
+        "physical": 64,
+        "ovr": 63
+    },
+    {
+        "name": "Alexander Martin",
+        "tier": "shallow",
+        "pace": 61,
+        "acceleration": 64,
+        "vision": 63,
+        "meta": 64,
+        "physical": 60,
+        "ovr": 62
+    },
+    {
+        "name": "Elizabeth Rivera",
+        "tier": "mid",
+        "pace": 75,
+        "acceleration": 72,
+        "vision": 71,
+        "meta": 72,
+        "physical": 71,
+        "ovr": 72
+    },
+    {
+        "name": "Luke Torres",
+        "tier": "mid",
+        "pace": 68,
+        "acceleration": 73,
+        "vision": 74,
+        "meta": 74,
+        "physical": 74,
+        "ovr": 73
+    },
+    {
+        "name": "David Wright",
+        "tier": "mid",
+        "pace": 74,
+        "acceleration": 71,
+        "vision": 75,
+        "meta": 69,
+        "physical": 71,
+        "ovr": 72
+    },
+    {
+        "name": "Aria Rodriguez",
+        "tier": "mid",
+        "pace": 69,
+        "acceleration": 72,
+        "vision": 69,
+        "meta": 69,
+        "physical": 70,
+        "ovr": 70
+    },
+    {
+        "name": "Grace Roberts",
+        "tier": "mid",
+        "pace": 68,
+        "acceleration": 73,
+        "vision": 74,
+        "meta": 75,
+        "physical": 70,
+        "ovr": 72
+    },
+    {
+        "name": "Carter Johnson",
+        "tier": "mid",
+        "pace": 74,
+        "acceleration": 73,
+        "vision": 70,
+        "meta": 73,
+        "physical": 69,
+        "ovr": 72
+    },
+    {
+        "name": "Joseph Green",
+        "tier": "mid",
+        "pace": 68,
+        "acceleration": 72,
+        "vision": 74,
+        "meta": 71,
+        "physical": 68,
+        "ovr": 71
+    },
+    {
+        "name": "Layla Lewis",
+        "tier": "mid",
+        "pace": 73,
+        "acceleration": 74,
+        "vision": 68,
+        "meta": 72,
+        "physical": 71,
+        "ovr": 72
+    },
+    {
+        "name": "Victoria Smith",
+        "tier": "great",
+        "pace": 79,
+        "acceleration": 77,
+        "vision": 82,
+        "meta": 78,
+        "physical": 79,
+        "ovr": 79
+    },
+    {
+        "name": "Ethan Jackson",
+        "tier": "great",
+        "pace": 75,
+        "acceleration": 81,
+        "vision": 79,
+        "meta": 79,
+        "physical": 83,
+        "ovr": 79
+    },
+    {
+        "name": "Mia Sanchez",
+        "tier": "great",
+        "pace": 76,
+        "acceleration": 82,
+        "vision": 77,
+        "meta": 77,
+        "physical": 81,
+        "ovr": 79
+    },
+    {
+        "name": "James Thompson",
+        "tier": "great",
+        "pace": 81,
+        "acceleration": 76,
+        "vision": 80,
+        "meta": 83,
+        "physical": 83,
+        "ovr": 81
+    },
+    {
+        "name": "Aiden Jones",
+        "tier": "great",
+        "pace": 80,
+        "acceleration": 78,
+        "vision": 76,
+        "meta": 83,
+        "physical": 83,
+        "ovr": 80
+    },
+    {
+        "name": "Daniel Wilson",
+        "tier": "great",
+        "pace": 78,
+        "acceleration": 75,
+        "vision": 77,
+        "meta": 81,
+        "physical": 78,
+        "ovr": 78
+    },
+    {
+        "name": "Olivia Young",
+        "tier": "great",
+        "pace": 83,
+        "acceleration": 82,
+        "vision": 77,
+        "meta": 80,
+        "physical": 81,
+        "ovr": 81
+    },
+    {
+        "name": "Sebastian Miller",
+        "tier": "great",
+        "pace": 79,
+        "acceleration": 77,
+        "vision": 81,
+        "meta": 77,
+        "physical": 83,
+        "ovr": 79
+    },
+    {
+        "name": "Lily Clark",
+        "tier": "high",
+        "pace": 87,
+        "acceleration": 86,
+        "vision": 87,
+        "meta": 90,
+        "physical": 83,
+        "ovr": 87
+    },
+    {
+        "name": "Harper Carter",
+        "tier": "high",
+        "pace": 86,
+        "acceleration": 87,
+        "vision": 85,
+        "meta": 86,
+        "physical": 91,
+        "ovr": 87
+    },
+    {
+        "name": "Nathan Allen",
+        "tier": "high",
+        "pace": 87,
+        "acceleration": 91,
+        "vision": 84,
+        "meta": 85,
+        "physical": 88,
+        "ovr": 87
+    },
+    {
+        "name": "Avery Hill",
+        "tier": "high",
+        "pace": 87,
+        "acceleration": 84,
+        "vision": 83,
+        "meta": 90,
+        "physical": 91,
+        "ovr": 87
+    },
+    {
+        "name": "Emma Anderson",
+        "tier": "high",
+        "pace": 87,
+        "acceleration": 91,
+        "vision": 85,
+        "meta": 89,
+        "physical": 85,
+        "ovr": 87
+    },
+    {
+        "name": "Liam Moore",
+        "tier": "high",
+        "pace": 85,
+        "acceleration": 85,
+        "vision": 84,
+        "meta": 85,
+        "physical": 88,
+        "ovr": 85
+    },
+    {
+        "name": "Zoey Harris",
+        "tier": "high",
+        "pace": 89,
+        "acceleration": 89,
+        "vision": 91,
+        "meta": 86,
+        "physical": 90,
+        "ovr": 89
+    },
+    {
+        "name": "Elijah Adams",
+        "tier": "high",
+        "pace": 84,
+        "acceleration": 85,
+        "vision": 91,
+        "meta": 86,
+        "physical": 84,
+        "ovr": 86
+    },
+    {
+        "name": "Evelyn Taylor",
+        "tier": "world_class",
+        "pace": 97,
+        "acceleration": 97,
+        "vision": 97,
+        "meta": 95,
+        "physical": 98,
+        "ovr": 97
+    },
+    {
+        "name": "Isaac Nelson",
+        "tier": "world_class",
+        "pace": 99,
+        "acceleration": 95,
+        "vision": 92,
+        "meta": 95,
+        "physical": 93,
+        "ovr": 95
+    },
+    {
+        "name": "Samuel Hernandez",
+        "tier": "world_class",
+        "pace": 96,
+        "acceleration": 94,
+        "vision": 91,
+        "meta": 94,
+        "physical": 97,
+        "ovr": 94
+    },
+    {
+        "name": "Noah Martinez",
+        "tier": "world_class",
+        "pace": 93,
+        "acceleration": 96,
+        "vision": 91,
+        "meta": 94,
+        "physical": 99,
+        "ovr": 95
+    },
+    {
+        "name": "Wyatt Campbell",
+        "tier": "world_class",
+        "pace": 97,
+        "acceleration": 91,
+        "vision": 93,
+        "meta": 97,
+        "physical": 92,
+        "ovr": 94
+    },
+    {
+        "name": "Abigail Davis",
+        "tier": "world_class",
+        "pace": 98,
+        "acceleration": 95,
+        "vision": 96,
+        "meta": 96,
+        "physical": 91,
+        "ovr": 95
+    },
+    {
+        "name": "Sophia King",
+        "tier": "world_class",
+        "pace": 93,
+        "acceleration": 97,
+        "vision": 95,
+        "meta": 95,
+        "physical": 99,
+        "ovr": 96
+    },
+    {
+        "name": "Owen Perez",
+        "tier": "world_class",
+        "pace": 98,
+        "acceleration": 98,
+        "vision": 92,
+        "meta": 93,
+        "physical": 96,
+        "ovr": 95
+    }
+]

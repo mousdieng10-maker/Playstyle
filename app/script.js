@@ -29,12 +29,13 @@ const signupBtn = select("#signupBtn");
 const signupErrorMsg = select("#signupErrorMsg");
 const logInfoScreen = select("#logInfoScreen"); 
 
-
+const matchdayScreen = select("#matchdayScreen");
 
 // placeholder login screen
 const loadLoginScreen = select("#loadLoginScreen");
 
 // home screen
+const playerCards = document.querySelectorAll(".player-card");
 const playerCard = select("#playerCard");
 const play = select("#play");
 const audioSource = select("#audioSource"); 
@@ -62,6 +63,7 @@ const navUsername = select("#navUsername");
 const cardName = select("#cardName");
 const logScreen = select("#logScreen"); 
 
+const matchdayBtn = select("#matchdayBtn");
 const audioPlayer = select("#audioPlayer");
 
 
@@ -156,6 +158,12 @@ function modifyTextContent(nodeArray, dictRef, what){
 play.onclick = async function(){
     
 }
+
+// matchday 
+matchdayBtn.onclick = async function(){
+    hide(homeScreen)
+    showFlex(matchdayScreen)
+}
 // full size the card 
 async function initCardScreen(){
     show(logInfoScreen);
@@ -200,6 +208,7 @@ async function initCardScreen(){
                     const confirmMsg = await window.pywebview.api.save_log(logInput.value);
                     hide(logDiv);
                     hide(logTitle);
+                    
                     playerCard.classList.add("initAni");
 
                     playerCard.addEventListener("transitionend", () =>{playerCard.classList.add("initShake");}, {once:true});
@@ -259,7 +268,9 @@ async function initHomeScreen(){
     body.style.background = "white"; 
     await greetUser()
     const cardSrc = await window.pywebview.api.assign_card()
-    playerCard.style.backgroundImage = `url(${cardSrc})`
+    for(const card of playerCards){
+        card.style.backgroundImage = `url(${cardSrc})`
+    }
     let player_stats = await window.pywebview.api.getStats();
     modifyTextContent(paceHolder, player_stats, "pace");
     paceBar.style.width = `${player_stats.pace}%`;
@@ -304,6 +315,7 @@ hide(logInfoScreen);
 showFlex(loadLoginScreen)
 hide(audioPlayer)
 hide(loginScreen);
+hide(matchdayScreen);
 
 setTimeout(() => load(loadLoginScreen, loginScreen), 3000);
 
@@ -336,8 +348,8 @@ loginBtn.addEventListener("click", async () =>{
             await initHomeScreen()
             const selectMusic = await window.pywebview.api.music()
             audioSource.src = selectMusic;
-            //audioPlayer.load();
-            //audioPlayer.play();
+            audioPlayer.load();
+            audioPlayer.play();
             showFlex(homeScreen);
         }
     }
@@ -369,8 +381,8 @@ signupBtn.addEventListener("click", async () => {
 
                 const selectMusic = await window.pywebview.api.music()
                 audioSource.src = selectMusic;
-                //audioPlayer.load();
-                //audioPlayer.play();
+                audioPlayer.load();
+                audioPlayer.play();
                 showFlex(archetypeScreen); 
                 await window.pywebview.api.populate_quests();
             }
