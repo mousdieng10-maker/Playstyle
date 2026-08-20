@@ -26,12 +26,12 @@ Playmaker: Gives reading oriented quests.
 
 Defender: Gives fitness oriented quests. 
 
-Quests & Achievements Users log real-life quests and achievements, which directly weigh into their five stats. Completing a quest tied to a stat (e.g. a workout → Physical) increases that stat and contributes to your overall OVR.
+Quests & Achievements Users log real-life quests and achievements, which directly weigh into their five stats. Completing a quest increases stats and contributes to your overall OVR.
 
 Streaks Consistent logging builds a streak, rewarding regular engagement with the app the same way real form/momentum works in football.
 
 Decay Stats gradually decay if quests aren't logged for an extended period, keeping the card a living reflection of your current habits rather than a permanent record of past effort.
 
-Card Tiers As your OVR grows, your Playstyle Card visually upgrades through tiers (Bronze → Silver → Gold → Special), mirroring FIFA's card rarity system.
+Card Tiers As your OVR grows, your Playstyle Card visually upgrades through tiers (Bronze → gold → diamond → ruby), mirroring FIFA's card rarity system.
 
 Match Day Your card is tested against randomly generated opponent cards. The result reflects your current stats, a strong, well-rounded card performs better. This gives stat growth real consequence.
