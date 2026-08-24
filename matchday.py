@@ -18,6 +18,19 @@ class Player:
     def calculate_play_ovr(self):
         ovr = round((self.pace + self.acceleration + self.vision + self.meta + self.physical) / 5)
         self.ovr = ovr
+    def return_dict(self):
+        self.calculate_play_ovr()
+        opps_dict = {
+            "name":self.name,
+            "tier":self.tier,
+            "pace":self.pace,
+            "acceleration":self.acceleration, 
+            "vision":self.vision,
+            "meta":self.meta,
+            "physical":self.physical,
+            "ovr":self.ovr
+        }
+        return opps_dict
     
             
         
@@ -44,7 +57,6 @@ def set_up_user():
     elif 90 <= user_ovr <= 99:
         return "world_class"
     
-rank = set_up_user()
 
 
 def define_opp_rank():
@@ -84,6 +96,7 @@ def define_opp_rank():
     
 def choose_opponent():
     tier_players = define_opp_rank()
+    rank = set_up_user()
     opponent = random.choice(tier_players.get(rank))
     opponent.calculate_play_ovr()
     return opponent

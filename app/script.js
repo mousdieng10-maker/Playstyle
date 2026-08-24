@@ -72,6 +72,7 @@ pressOnLogin.onclick = function(){
     showFlex(loginScreen);
 }
 
+
 function createTask(title,desc){
     const task = document.createElement("div");
     task.className = "quest-row";
@@ -105,7 +106,15 @@ const tekkers = select("#tekkers");
 const allRounder = select("#allRounder"); 
 const playmaker = select("#playmaker");
 
-
+// opponent card
+const oppOvr = select("#oppOvr");
+const oppName = select("#oppName");
+const oppPaceHolder = select("#oppPaceHolder");
+const oppAccHolder = select("#oppAccHolder");
+const oppPhysicalHolder = select("#oppPhysicalHolder");
+const oppMetaHolder = select("#oppMetaHolder");
+const oppVisionHolder= select("#oppVisionHolder");
+const oppCard = select("#oppCard");
 async function prepArchetype(name){
     hide(archetypeScreen);
     await window.pywebview.api.setPlaystyle(name)
@@ -162,6 +171,15 @@ play.onclick = async function(){
 // matchday 
 matchdayBtn.onclick = async function(){
     hide(homeScreen)
+    let opponentInfo = await window.pywebview.api.send_opponent()
+    oppOvr.textContent = opponentInfo.ovr;
+    oppName.textContent = opponentInfo.name;
+    oppPaceHolder.textContent = opponentInfo.pace;
+    oppAccHolder.textContent  = opponentInfo.acceleration;
+    oppPhysicalHolder.textContent = opponentInfo.physical;
+    oppMetaHolder.textContent = opponentInfo.meta;
+    oppVisionHolder.textContent = opponentInfo.vision; 
+    oppCard.style.background = `url("${opponentInfo.src}")`;
     showFlex(matchdayScreen)
 }
 // full size the card 

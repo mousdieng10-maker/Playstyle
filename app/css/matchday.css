@@ -13,12 +13,11 @@
 
 }
 #userScore{
-    color:rgb(255, 0, 255);
-    text-shadow:1px 1px 30px rgb(255, 0, 255);
+    color:purple;
+
 }
 #oppScore{
-    color:red; 
-    text-shadow:1px 1px 30px red; 
+    color:purple;  
 }
 .score-card{
     display:flex;
@@ -28,9 +27,9 @@
     border-bottom:4px solid rgba(128, 0, 128, 0.894); 
     border-top:4px solid rgba(193, 0, 193, 0.894); 
     border-right:4px solid rgba(193, 0, 193, 0.894); 
-    color:white; 
+    color:black; 
  
-    background:rgba(128, 0, 128, 0.259); 
+    background:white; 
     border-radius:3em;
     backdrop-filter:blur(100px); 
     box-shadow:1px 1px 10px rgba(0, 0, 0, 0.364);
@@ -43,9 +42,11 @@
     border-bottom:4px solid rgba(128, 0, 128, 0.894); 
     border-top:4px solid rgba(193, 0, 193, 0.894); 
     border-right:4px solid rgba(193, 0, 193, 0.894); 
-    color:white; 
-    background:rgba(128, 0, 128, 0.259); 
+    color:black; 
+    background:white; 
     border-radius:3em;
+    display:flex; 
+    gap:5em;
     backdrop-filter:blur(100px); 
     box-shadow:1px 1px 10px rgba(0, 0, 0, 0.364);
     padding:2em; 
@@ -62,6 +63,7 @@
   width:25em;
   height:auto;
   filter:saturate(120%);
+
   aspect-ratio: 355/570;  
   text-align: center;
   overflow: hidden;
@@ -71,4 +73,18 @@
   flex-direction:column;
   justify-content:center;
   background-repeat:no-repeat;
+}
+
+.commentaryBox{
+    display:flex; 
+    flex-direction:column;
+    gap:1em;
+    border-left:4px solid rgba(128, 0, 128, 0.894);
+    border-bottom:4px solid rgba(128, 0, 128, 0.894); 
+    border-top:4px solid rgba(193, 0, 193, 0.894); 
+    border-right:4px solid rgba(193, 0, 193, 0.894); 
+    width:45%;
+    border-radius:3em;
+    height:40em;
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.387); 
 }

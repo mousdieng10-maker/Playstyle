@@ -150,6 +150,23 @@ class Api():
     def onclose(self):
         user = self.get_user_obj()
         user.update_json()
+    def send_opponent(self):
+        from matchday import choose_opponent
+        cards = checkfile.read(make_path("cards.json"))
+        opps = choose_opponent()
+        opps_dict = opps.return_dict()
+        if  50 <= opps.ovr < 67:
+            opps_dict["src"] = cards.get("bronze")
+        elif 67 <= opps.ovr < 83:
+            opps_dict["src"] =  cards.get("gold")
+        elif 83 <= opps.ovr < 90:
+            opps_dict["src"] =  cards.get("diamond")
+        elif 90 <= opps.ovr <= 99:
+            opps_dict["src"] =   cards.get("ruby")
+        return opps_dict
+
+        
+
 
         
 
