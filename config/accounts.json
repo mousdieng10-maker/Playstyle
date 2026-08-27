@@ -1,3 +1,24 @@
 [
-    
+    {
+        "username": "Moustapha123",
+        "password": "$2b$12$jRKUj54rIIvZncWTmDTAPur.9.udVC63Y4B7l1xDreUYM7LNPpVkC",
+        "age": 20,
+        "pace": 50,
+        "meta": 50,
+        "acceleration": 50,
+        "physical": 50,
+        "vision": 65,
+        "playstyle": "tekkers"
+    },
+    {
+        "username": "NewAccoutn",
+        "password": "$2b$12$igO1xB4163ZSh942XtiN9ejIiHO8RsMryzHRiQUZhrH7ttwrZXSnu",
+        "age": 20,
+        "pace": 55,
+        "meta": 40,
+        "acceleration": 55,
+        "physical": 55,
+        "vision": 40,
+        "playstyle": "tekkers"
+    }
 ]

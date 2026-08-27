@@ -1,3 +1,11 @@
 {
-    
+    "username": "NewAccoutn",
+    "password": "$2b$12$igO1xB4163ZSh942XtiN9ejIiHO8RsMryzHRiQUZhrH7ttwrZXSnu",
+    "age": 20,
+    "pace": 70,
+    "meta": 40,
+    "acceleration": 55,
+    "physical": 55,
+    "vision": 40,
+    "playstyle": "tekkers"
 }

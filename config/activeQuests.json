@@ -360,15 +360,6 @@
         "desc": "Vision and the read of the game: reading the pitch starts with reading the page.",
         "lower_quests": [
             {
-                "quest_name": "Read 2 Pages of Non-Fiction",
-                "difficulty": "lower",
-                "attributes": [
-                    "meta",
-                    "acceleration"
-                ],
-                "description": "Read two pages to break through the early friction, like the first few touches to settle into a match."
-            },
-            {
                 "quest_name": "Underline 1 Core Idea",
                 "difficulty": "lower",
                 "attributes": [
