@@ -3,6 +3,7 @@ import bcrypt
 import checkfile 
 import rewrite as re
 from pathlib import Path
+import random
 
 abs_path = Path(__file__).resolve().parent
 #path to where the accounts are stored 
@@ -163,11 +164,25 @@ class Api():
             opps_dict["src"] =  cards.get("diamond")
         elif 90 <= opps.ovr <= 99:
             opps_dict["src"] =   cards.get("ruby")
+        user = self.get_user_obj()
+        user_dict = user.giveStatsDict()
+        user_ovr = user_dict.get("overall")
+        if user_ovr > opps.ovr:
+            opps_dict["won"] =False
+        elif user_ovr == opps.ovr:
+            opps_dict["won"] = "same"
+        elif user_ovr < opps.ovr:
+            opps_dict["won"] = True
+
         return opps_dict
-
-        
-
-
+    def penalize_task(self):
+        user = self.get_user_obj()
+        user.pace -= 10
+        user.meta -= 10 
+        user.acceleration -= 10 
+        user.vision -= 10
+        user.physical -= 10 
+        user.update_json()
         
 
 api = Api()

@@ -107,8 +107,10 @@ const allRounder = select("#allRounder");
 const playmaker = select("#playmaker");
 
 // opponent card
+const oppScore = select("#oppScore");
+const userScore = select("#userScore"); 
 const oppOvr = select("#oppOvr");
-const oppName = select("#oppName");
+const oppName = document.querySelectorAll(".oppName");
 const oppPaceHolder = select("#oppPaceHolder");
 const oppAccHolder = select("#oppAccHolder");
 const oppPhysicalHolder = select("#oppPhysicalHolder");
@@ -167,19 +169,47 @@ function modifyTextContent(nodeArray, dictRef, what){
 play.onclick = async function(){
     
 }
+const returnbtn = select("#returnHome");
+returnbtn.onclick = async function(){
+    hide(matchdayScreen);
+    await initHomeScreen();
+    showFlex(homeScreen);
+
+
+}
 
 // matchday 
 matchdayBtn.onclick = async function(){
     hide(homeScreen)
     let opponentInfo = await window.pywebview.api.send_opponent()
     oppOvr.textContent = opponentInfo.ovr;
-    oppName.textContent = opponentInfo.name;
+    for(const opp of oppName){
+        opp.textContent = opponentInfo.name;
+
+    }
     oppPaceHolder.textContent = opponentInfo.pace;
     oppAccHolder.textContent  = opponentInfo.acceleration;
     oppPhysicalHolder.textContent = opponentInfo.physical;
     oppMetaHolder.textContent = opponentInfo.meta;
     oppVisionHolder.textContent = opponentInfo.vision; 
     oppCard.style.background = `url("${opponentInfo.src}")`;
+    if(opponentInfo.won == false){
+        oppScore.textContent  = "1";
+        userScore.textContent = "2";
+        const rewardTask = await window.pywebview.api.reward_task();
+
+    }
+
+    else if(opponentInfo.won == true){
+        oppScore.textContent = "2";
+        userScore.textContent = "1";
+        const penalizeTask = await window.pywebview.api.penalize_task()
+    }
+    else{
+        oppScore.textContent = "1";
+        userScore.textContent = "1";
+    }
+
     showFlex(matchdayScreen)
 }
 // full size the card 
